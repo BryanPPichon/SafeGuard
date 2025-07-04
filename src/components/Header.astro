@@ -1,0 +1,271 @@
+---
+// No necesitamos props para este componente
+---
+
+<header class="bg-white shadow-sm fixed w-full top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <div class="flex-shrink-0 flex items-center">
+          <div class="header-logo-icon w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center mr-3">
+            <svg viewBox="0 0 24 24" class="w-5 h-5 text-white fill-current">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <span class="header-logo-text text-xl font-bold text-gray-900">Safeguard</span>
+          <span class="header-logo-subtext text-sm text-gray-500 ml-2">LABORATORIES</span>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <a href="#why-choose-us" class="header-nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium uppercase tracking-wide relative overflow-hidden">
+            <span class="relative z-10">WHY CHOOSE US</span>
+            <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+          </a>
+          <a href="#solutions" class="header-nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium uppercase tracking-wide relative overflow-hidden">
+            <span class="relative z-10">SOLUTIONS</span>
+            <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+          </a>
+          <a href="#from-lab-to-launch" class="header-nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium uppercase tracking-wide relative overflow-hidden">
+            <span class="relative z-10">FROM LAB TO LAUNCH</span>
+            <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+          </a>
+          <a href="#contact" class="header-nav-link text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium uppercase tracking-wide relative overflow-hidden">
+            <span class="relative z-10">CONTACT</span>
+            <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path class="hamburger-line" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path class="close-line hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="#why-choose-us" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">
+        WHY CHOOSE US
+      </a>
+      <a href="#solutions" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">
+        SOLUTIONS
+      </a>
+      <a href="#from-lab-to-launch" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">
+        FROM LAB TO LAUNCH
+      </a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">
+        CONTACT
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animaciones de entrada del header
+  const headerTl = gsap.timeline();
+
+
+
+  // Animación del texto del logo
+  headerTl.from('.header-logo-text', {
+    duration: 0.6,
+    x: -30,
+    opacity: 0,
+    ease: 'power2.out'
+  }, '-=0.4');
+
+  // Animación del subtexto del logo
+  headerTl.from('.header-logo-subtext', {
+    duration: 0.6,
+    x: -20,
+    opacity: 0,
+    ease: 'power2.out'
+  }, '-=0.3');
+
+  // Animación de los enlaces de navegación
+  headerTl.from('.header-nav-link', {
+    duration: 0.5,
+    y: -20,
+    opacity: 0,
+    stagger: 0.1,
+    ease: 'power2.out'
+  }, '-=0.3');
+
+  // Animación del botón móvil
+  headerTl.from('#mobile-menu-button', {
+    duration: 0.5,
+    scale: 0,
+    opacity: 0,
+    ease: 'back.out(1.7)'
+  }, '-=0.4');
+
+  // Animación de hover para el icono del logo
+  const logoIcon = document.querySelector('.header-logo-icon');
+  if (logoIcon) {
+    logoIcon.addEventListener('mouseenter', () => {
+      gsap.to(logoIcon, {
+        duration: 0.3,
+        scale: 1.1,
+        rotation: 15,
+        ease: 'power2.out'
+      });
+    });
+
+    logoIcon.addEventListener('mouseleave', () => {
+      gsap.to(logoIcon, {
+        duration: 0.3,
+        scale: 1,
+        rotation: 0,
+        ease: 'power2.out'
+      });
+    });
+  }
+
+  // Animaciones de hover para los enlaces de navegación
+  document.querySelectorAll('.header-nav-link').forEach(link => {
+    const underline = link.querySelector('.nav-underline');
+    
+    link.addEventListener('mouseenter', () => {
+      gsap.to(underline, {
+        duration: 0.1,
+        width: '100%',
+        ease: 'power2.out'
+      });
+    });
+
+    link.addEventListener('mouseleave', () => {
+      gsap.to(underline, {
+        duration: 0.1,
+        width: '0%',
+        ease: 'power2.out'
+      });
+    });
+  });
+
+  // Animación de scroll para el header
+  ScrollTrigger.create({
+    trigger: 'body',
+    start: 'top -10',
+    end: 'bottom bottom',
+    onEnter: () => {
+      gsap.to('header', {
+        duration: 0.3,
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        backdropFilter: 'blur(10px)',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+        ease: 'power2.out'
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to('header', {
+        duration: 0.3,
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        backdropFilter: 'blur(0px)',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+        ease: 'power2.out'
+      });
+    }
+  });
+
+  // Funcionalidad del menú móvil
+  const mobileButton = document.querySelector('#mobile-menu-button');
+  const mobileMenu = document.querySelector('#mobile-menu');
+  const hamburgerLine = document.querySelector('.hamburger-line');
+  const closeLine = document.querySelector('.close-line');
+  let isMobileMenuOpen = false;
+
+  if (mobileButton && mobileMenu && hamburgerLine && closeLine) {
+    mobileButton.addEventListener('click', () => {
+      isMobileMenuOpen = !isMobileMenuOpen;
+      
+      if (isMobileMenuOpen) {
+        // Mostrar menú
+        mobileMenu.classList.remove('hidden');
+        hamburgerLine.classList.add('hidden');
+        closeLine.classList.remove('hidden');
+        
+        // Animación de entrada
+        gsap.fromTo(mobileMenu, 
+          { opacity: 0, y: -20 },
+          { duration: 0.3, opacity: 1, y: 0, ease: 'power2.out' }
+        );
+        
+        // Animación de los enlaces
+        gsap.fromTo('.mobile-nav-link', 
+          { opacity: 0, x: -20 },
+          { duration: 0.3, opacity: 1, x: 0, stagger: 0.1, ease: 'power2.out' }
+        );
+      } else {
+        // Ocultar menú
+        hamburgerLine.classList.remove('hidden');
+        closeLine.classList.add('hidden');
+        
+        gsap.to(mobileMenu, {
+          duration: 0.3,
+          opacity: 0,
+          y: -20,
+          ease: 'power2.out',
+          onComplete: () => {
+            mobileMenu.classList.add('hidden');
+          }
+        });
+      }
+      
+      // Animación del botón
+      gsap.to(mobileButton, {
+        duration: 0.2,
+        scale: 0.95,
+        ease: 'power2.out',
+        onComplete: () => {
+          gsap.to(mobileButton, {
+            duration: 0.2,
+            scale: 1,
+            ease: 'back.out(1.7)'
+          });
+        }
+      });
+    });
+
+    // Cerrar menú al hacer click en un enlace
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMobileMenuOpen) {
+          (mobileButton as HTMLButtonElement).click(); // Simular click del botón para cerrar
+        }
+      });
+    });
+  }
+
+  // Animación de pulsación continua sutil en el logo
+  gsap.to('.header-logo-icon', {
+    duration: 2,
+    scale: 1.02,
+    repeat: -1,
+    yoyo: true,
+    ease: 'power1.inOut'
+  });
+</script>
+
+<style>
+  header {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+</style>

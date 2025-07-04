@@ -1,0 +1,138 @@
+---
+import bottleImage from '../assets/gotero.png';
+---
+
+<section class="relative bg-gray-100 min-h-screen flex items-center overflow-hidden pt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Contenido de texto -->
+      <div class="space-y-8">
+        <div class="space-y-4">
+          <h1 class="hero-title text-6xl lg:text-7xl font-bold text-gray-800 leading-tight">
+            <span class="block">ELEVATE YOUR</span>
+            <span class="block">MANUFACTURING GAME</span>
+          </h1>
+        </div>
+        
+        <div class="hero-subtitle space-y-6">
+          <div class="text-xl text-gray-700">
+            <span class="font-semibold">YOUR <span class="text-blue-600">PRODUCT</span>, OUR <span class="text-blue-600">PASSION</span></span>
+          </div>
+          <div class="text-lg text-gray-600 space-y-2">
+            <p>Seamless Liquid Manufacturing Solutions</p>
+            <p>| From Lab to Launch</p>
+          </div>
+        </div>
+        
+        <div class="hero-cta">
+          <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 text-lg uppercase tracking-wide rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-0 outline-none opacity-100 visible">
+            START YOUR PROJECT TODAY
+          </button>
+        </div>
+      </div>
+
+      <!-- Imagen y gráfico -->
+      <div class="relative flex justify-center items-center">
+        <!-- Gráfico hexagonal de fondo -->
+        <div class="hero-hexagon absolute inset-0 flex justify-center items-center">
+          <svg viewBox="0 0 400 400" class="w-96 h-96 text-blue-500">
+            <defs>
+              <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:0.9" />
+              </linearGradient>
+            </defs>
+            <path d="M200 40 L320 110 L320 250 L200 320 L80 250 L80 110 Z" 
+                  fill="url(#hexGradient)" 
+                  stroke="#1E40AF" 
+                  stroke-width="3"/>
+          </svg>
+        </div>
+        
+        <!-- Botella con gotero -->
+        <div class="hero-bottle relative z-10">
+          <img
+            src={bottleImage.src}
+            alt="Liquid manufacturing bottle with dropper"
+            class="w-48 h-72 object-contain filter drop-shadow-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Esperar a que el DOM esté completamente cargado
+  document.addEventListener('DOMContentLoaded', () => {
+    // Animaciones de entrada
+    const tl = gsap.timeline();
+
+    // Animación del título
+    tl.from('.hero-title span', {
+      duration: 1,
+      y: 100,
+      opacity: 0,
+      stagger: 0.2,
+      ease: 'power3.out'
+    });
+
+    // Animación del subtítulo
+    tl.from('.hero-subtitle > *', {
+      duration: 0.8,
+      y: 50,
+      opacity: 0,
+      stagger: 0.1,
+      ease: 'power2.out'
+    }, '-=0.5');
+
+    // Animación del hexágono
+    tl.from('.hero-hexagon', {
+      duration: 1.5,
+      scale: 0,
+      rotation: 180,
+      opacity: 0,
+      ease: 'elastic.out(1, 0.5)'
+    }, '-=1');
+
+    // Animación de la botella
+    tl.from('.hero-bottle', {
+      duration: 1,
+      y: 50,
+      opacity: 0,
+      scale: 0.8,
+      ease: 'power3.out'
+    }, '-=0.8');
+
+    // Animación del botón
+    tl.from('.hero-cta', {
+      duration: 0.8,
+      y: 50,
+      opacity: 0,
+      ease: 'power2.out'
+    }, '-=0.2');
+
+    // Animación continua del hexágono
+    gsap.to('.hero-hexagon svg', {
+      rotation: 360,
+      duration: 20,
+      repeat: -1,
+      ease: 'none'
+    });
+
+    // Animación de parallax para la botella
+    gsap.to('.hero-bottle', {
+      y: -20,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: 'power1.inOut'
+    });
+  });
+</script>

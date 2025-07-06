@@ -1,61 +1,47 @@
 ---
-import bottleImage from '../assets/gotero.png';
+import bottleImage from '../assets/FRASCO_BANNER_.png';
+import '../styles/global.css';
 ---
 
-<section class="relative bg-gray-100 min-h-screen flex items-center overflow-hidden pt-16">
+<section class="relative bg-gray-100 min-h-screen flex items-center overflow-hidden pt-16 sm:pt-20 lg:pt-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
       
       <!-- Contenido de texto -->
-      <div class="space-y-8">
-        <div class="space-y-4">
-          <h1 class="hero-title text-6xl lg:text-7xl font-bold text-gray-800 leading-tight">
-            <span class="block">ELEVATE YOUR</span>
-            <span class="block">MANUFACTURING GAME</span>
-          </h1>
+      <div class="space-y-6 lg:space-y-8 text-center lg:text-left">
+        <div class="space-y-2 lg:space-y-4">
+          <div class="w-full max-w-[600px] mx-auto lg:mx-0">
+            <h1 class="hero-title text-gray-800 leading-tight w-full" style="font-family: 'Antonio', sans-serif;">
+              <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[8.5rem] w-full whitespace-nowrap overflow-hidden">ELEVATE YOUR</span>
+              <span class="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[4.97rem] w-full whitespace-nowrap overflow-hidden">MANUFACTURING GAME</span>
+            </h1>
+          </div>
         </div>
         
-        <div class="hero-subtitle space-y-6">
-          <div class="text-xl text-gray-700">
+        <div class="hero-subtitle space-y-4 lg:space-y-6 max-w-[600px] mx-auto lg:mx-0">
+          <div class="text-lg sm:text-xl text-gray-700">
             <span class="font-semibold">YOUR <span class="text-blue-600">PRODUCT</span>, OUR <span class="text-blue-600">PASSION</span></span>
           </div>
-          <div class="text-lg text-gray-600 space-y-2">
+          <div class="text-base sm:text-lg text-gray-600 space-y-2">
             <p>Seamless Liquid Manufacturing Solutions</p>
             <p>| From Lab to Launch</p>
           </div>
         </div>
         
-        <div class="hero-cta">
-          <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 text-lg uppercase tracking-wide rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-0 outline-none opacity-100 visible">
+        <div class="hero-cta max-w-[600px] mx-auto lg:mx-0">
+          <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 text-base sm:text-lg uppercase tracking-wide rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-0 outline-none opacity-100 visible w-full sm:w-auto">
             START YOUR PROJECT TODAY
           </button>
         </div>
       </div>
 
-      <!-- Imagen y gráfico -->
-      <div class="relative flex justify-center items-center">
-        <!-- Gráfico hexagonal de fondo -->
-        <div class="hero-hexagon absolute inset-0 flex justify-center items-center">
-          <svg viewBox="0 0 400 400" class="w-96 h-96 text-blue-500">
-            <defs>
-              <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.8" />
-                <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:0.9" />
-              </linearGradient>
-            </defs>
-            <path d="M200 40 L320 110 L320 250 L200 320 L80 250 L80 110 Z" 
-                  fill="url(#hexGradient)" 
-                  stroke="#1E40AF" 
-                  stroke-width="3"/>
-          </svg>
-        </div>
-        
-        <!-- Botella con gotero -->
-        <div class="hero-bottle relative z-10">
+      <!-- Imagen principal -->
+      <div class="relative flex justify-center items-center mt-8 lg:mt-0">
+        <div class="hero-bottle w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-md">
           <img
             src={bottleImage.src}
             alt="Liquid manufacturing bottle with dropper"
-            class="w-48 h-72 object-contain filter drop-shadow-2xl"
+            class="w-full h-auto object-contain filter drop-shadow-2xl"
           />
         </div>
       </div>
@@ -92,15 +78,6 @@ import bottleImage from '../assets/gotero.png';
       ease: 'power2.out'
     }, '-=0.5');
 
-    // Animación del hexágono
-    tl.from('.hero-hexagon', {
-      duration: 1.5,
-      scale: 0,
-      rotation: 180,
-      opacity: 0,
-      ease: 'elastic.out(1, 0.5)'
-    }, '-=1');
-
     // Animación de la botella
     tl.from('.hero-bottle', {
       duration: 1,
@@ -117,22 +94,5 @@ import bottleImage from '../assets/gotero.png';
       opacity: 0,
       ease: 'power2.out'
     }, '-=0.2');
-
-    // Animación continua del hexágono
-    gsap.to('.hero-hexagon svg', {
-      rotation: 360,
-      duration: 20,
-      repeat: -1,
-      ease: 'none'
-    });
-
-    // Animación de parallax para la botella
-    gsap.to('.hero-bottle', {
-      y: -20,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut'
-    });
   });
 </script>

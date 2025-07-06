@@ -3,48 +3,48 @@ import bottleImage from '../assets/FRASCO_BANNER_.png';
 import '../styles/global.css';
 ---
 
-<section class="relative bg-gray-100 min-h-screen flex items-center overflow-hidden pt-16 sm:pt-20 lg:pt-24">
+<section class="relative bg-gray-100 min-h-screen flex items-start overflow-hidden sm:pt-20 lg:p-30 ">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-25">
       
       <!-- Contenido de texto -->
       <div class="space-y-6 lg:space-y-8 text-center lg:text-left">
         <div class="space-y-2 lg:space-y-4">
           <div class="w-full max-w-[600px] mx-auto lg:mx-0">
-            <h1 class="hero-title text-gray-800 leading-tight w-full" style="font-family: 'Antonio', sans-serif;">
+            <h1 class="hero-title text-gray-800 leading-tight w-full font-[Antonio]">
               <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[8.5rem] w-full whitespace-nowrap overflow-hidden">ELEVATE YOUR</span>
               <span class="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[4.97rem] w-full whitespace-nowrap overflow-hidden">MANUFACTURING GAME</span>
             </h1>
           </div>
         </div>
         
-        <div class="hero-subtitle space-y-4 lg:space-y-6 max-w-[600px] mx-auto lg:mx-0">
-          <div class="text-lg sm:text-xl text-gray-700">
-            <span class="font-semibold">YOUR <span class="text-blue-600">PRODUCT</span>, OUR <span class="text-blue-600">PASSION</span></span>
+        <div class="hero-subtitle mt-15 mb-16 ml-2">
+          <div class="text-xl text-black 2xl:text-[1.81rem]">
+            <span>YOUR <span class="text-blue-600 font-black">PRODUCT</span>, OUR <span class="text-blue-600 font-black">PASSION</span></span>
           </div>
-          <div class="text-base sm:text-lg text-gray-600 space-y-2">
+          <div class="text-xl text-black 2xl:text-[1.81rem]">
             <p>Seamless Liquid Manufacturing Solutions</p>
             <p>| From Lab to Launch</p>
           </div>
         </div>
         
-        <div class="hero-cta max-w-[600px] mx-auto lg:mx-0">
-          <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 text-base sm:text-lg uppercase tracking-wide rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-0 outline-none opacity-100 visible w-full sm:w-auto">
+        <div class="hero-cta mx-auto lg:mx-0">
+          <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 text-base sm:text-[1.75rem] uppercase tracking-wide rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-0 outline-none opacity-100 visible w-full sm:w-auto">
             START YOUR PROJECT TODAY
           </button>
         </div>
       </div>
 
       <!-- Imagen principal -->
-      <div class="relative flex justify-center items-center mt-8 lg:mt-0">
-        <div class="hero-bottle w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-md">
-          <img
-            src={bottleImage.src}
-            alt="Liquid manufacturing bottle with dropper"
-            class="w-full h-auto object-contain filter drop-shadow-2xl"
-          />
-        </div>
+    <div class="relative flex justify-center items-start lg:mb-15">
+      <div class="hero-bottle w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-md">
+        <img
+        src={bottleImage.src}
+        alt="Liquid manufacturing bottle with dropper"
+        class="w-full h-full object-contain filter drop-shadow-2xl"
+        />
       </div>
+    </div>
     </div>
   </div>
 </section>

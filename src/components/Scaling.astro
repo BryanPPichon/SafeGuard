@@ -9,7 +9,7 @@ import '../styles/global.css';
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
     <!-- 4 textos de esquina - responsivos -->
-    <div class="corner-item absolute top-8 left-4 sm:top-8 sm:left-8 lg:top-18 lg:left-1/4 font-montserrat text-xs sm:text-sm text-gray-900 select-none">
+    <div class="corner-item absolute top-8 left-4 sm:top-12 sm:left-8 lg:top-18 lg:left-1/4 font-montserrat text-xs sm:text-sm text-gray-900 select-none">
       R&D Lab, In-House
     </div>
     <div class="corner-item absolute top-8 right-4 sm:top-12 sm:right-8 lg:top-18 lg:right-1/4 font-montserrat text-xs sm:text-sm text-gray-700 select-none">
@@ -23,14 +23,10 @@ import '../styles/global.css';
     </div>
 
     <!-- Bloque central -->
-    <div class="max-w-3xl mx-auto text-center py-16 sm:py-20 lg:py-18">
+    <div class="max-w-4xl mx-auto text-center py-16 sm:py-20 lg:py-18 px-4 sm:px-6">
       <!-- Primera línea: Antonio Bold, responsivo -->
       <h2
-        class="scaling-title
-               text-[#3f444b]   
-               text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
-               mb-1
-               leading-none"
+        class="scaling-title text-[#3f444b] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl mb-2 leading-tight"
         style="font-family: 'Antonio', sans-serif; font-weight: 300;"
       >
         BUILT TO SCALE
@@ -38,19 +34,14 @@ import '../styles/global.css';
 
       <!-- Segunda línea: Antonio ExtraLight, responsivo -->
       <h3
-        class="scaling-subtitle
-                text-[#15598f] 
-               text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl
-               tracking-[0.035em]
-               mb-6
-               leading-none"
+        class="scaling-subtitle text-[#15598f] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl tracking-[0.035em] mb-6 leading-tight"
         style="font-family: 'Antonio', sans-serif; font-weight: 300;"
       >
         BACKED BY SCIENCE
       </h3>
 
       <!-- Texto descriptivo: Montserrat, responsivo -->
-      <div class="scaling-text font-montserrat text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
+      <div class="scaling-text font-montserrat text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
         <p class="font-bold text-gray-900 leading-tight mb-2">
           Formulation, Volume, Compliance
         </p>
@@ -120,6 +111,15 @@ import '../styles/global.css';
       });
 
       item.addEventListener('mouseleave', () => {
+        gsap.to(item, {
+          duration: 0.3,
+          scale: 1,
+          ease: 'power2.out'
+        });
+      });
+    });
+  });
+</script>
         gsap.to(item, {
           duration: 0.3,
           scale: 1,

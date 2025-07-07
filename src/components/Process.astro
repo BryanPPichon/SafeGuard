@@ -1,0 +1,350 @@
+---
+import '../styles/global.css';
+---
+
+<section
+  id="safeguard-process"
+  class="relative overflow-hidden min-h-screen flex items-center justify-center"
+>
+  <!-- Video de fondo con configuración mejorada -->
+  <div class="absolute inset-0 w-full h-full">
+    <video
+      id="background-video"
+      class="absolute top-0 left-0 w-full h-full object-cover video-darkened"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="/10_fondo.png"
+      style="z-index: 1; display: block;"
+     
+      onerror="console.error('Video error occurred');"
+    >
+      <source src="./Video_fondo.mp4" type="video/mp4">
+      <source src="/Video_fondo.mp4" type="video/mp4">
+      <source src="Video_fondo.mp4" type="video/mp4">
+      <!-- Fallback para navegadores que no soportan video -->
+      <img src="/10_fondo.png" alt="Background" style="width: 100%; height: 100%; object-fit: cover;">
+    </video>
+    
+    <!-- Fallback manual -->
+    <div 
+      id="fallback-bg"
+      class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+      style="background-image: url('/10_fondo.png'); z-index: 1; display: none;"
+    ></div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-12 lg:py-16">
+    
+    <!-- Título principal -->
+    <div class="text-center mb-8 sm:mb-12 lg:mb-16">
+      <p class="process-subtitle text-white text-sm sm:text-base md:text-lg mb-3 font-montserrat font-light tracking-wide">
+        FROM CONCEPT TO COMPLETION:
+      </p>
+      <h1 class="process-main-title text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-light" style="font-family: 'Antonio', sans-serif;">
+        THE SAFEGUARD<br>
+        <span class="block">PROCESS</span>
+      </h1>
+      <p class="process-description text-white text-sm sm:text-base md:text-lg mt-4 max-w-4xl mx-auto font-montserrat font-normal leading-relaxed">
+        Our process is engineered to reduce friction and accelerate results<br class="hidden sm:block">
+        Whether you're launching a new product or scaling an existing one,<br class="hidden sm:block">
+        we guide you through every step with precision and transparency
+      </p>
+    </div>
+
+    <!-- Layout de 2 columnas: 3 títulos izquierda, 2 títulos derecha -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+      
+      <!-- Columna izquierda: 3 títulos -->
+      <div class="space-y-6">
+        
+        <!-- Título 1: Discovery Consultation -->
+        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="discovery">
+          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
+            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
+              DISCOVERY CONSULTATION
+            </h3>
+            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
+              +
+            </div>
+          </div>
+          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+            <div class="pt-4">
+              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+                We begin with an in-depth consultation to understand your unique requirements, 
+                timeline, and business objectives. Our team analyzes your current formulation 
+                or develops a completely new one based on your specifications.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Título 2: Formulation & Testing -->
+        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="formulation">
+          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
+            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
+              FORMULATION & TESTING
+            </h3>
+            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
+              +
+            </div>
+          </div>
+          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+            <div class="pt-4">
+              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+                Using advanced formulation techniques, we create and refine your product. 
+                Extensive testing ensures optimal performance, shelf life, and compliance 
+                with industry standards before moving to production.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Título 3: Blending & Filling -->
+        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="blending">
+          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
+            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
+              BLENDING & FILLING
+            </h3>
+            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
+              +
+            </div>
+          </div>
+          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+            <div class="pt-4">
+              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+                We handle batching, precision blending, and scalable filling from 
+                1mL to 1 gallon with strict QC standards. Our automated systems 
+                ensure consistency and efficiency at any production volume.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Columna derecha: 2 títulos -->
+      <div class="space-y-6">
+        
+        <!-- Título 4: QA and R&D -->
+        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="qa-rd">
+          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
+            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
+              QA AND R&D
+            </h3>
+            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
+              +
+            </div>
+          </div>
+          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+            <div class="pt-4">
+              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+                Our state-of-the-art laboratory conducts rigorous testing and quality assurance 
+                protocols. We ensure your product meets all regulatory standards while 
+                optimizing for performance, stability, and cost-effectiveness.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Título 5: Packaging & Branding -->
+        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="packaging">
+          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
+            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
+              PACKAGING & BRANDING
+            </h3>
+            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
+              +
+            </div>
+          </div>
+          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+            <div class="pt-4">
+              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+                We provide comprehensive packaging solutions that align with your brand 
+                identity. From design to final production, we ensure your product 
+                stands out while maintaining functionality and compliance.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-section:hover .process-section-title {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  .process-section:hover .border-white {
+    border-color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  .process-section.active .process-toggle {
+    transform: rotate(45deg);
+  }
+
+  .process-section.active .process-section-title {
+    transform: scale(1.05);
+    font-weight: 700 !important;
+    color: rgba(255, 255, 255, 1) !important;
+  }
+
+  .process-section.active .process-content {
+    max-height: 300px !important;
+  }
+
+  .process-section.active .border-white {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  /* Filtro aplicado directamente al video */
+  .video-darkened {
+    filter: brightness(0.7) contrast(1.1) !important;
+    -webkit-filter: brightness(0.7) contrast(1.1) !important;
+  }
+  
+  /* Asegurar que el video se vea */
+  #background-video {
+    min-width: 100% !important;
+    min-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1 !important;
+  }
+  
+  /* Contenido principal */
+  .relative.z-10 {
+    z-index: 10 !important;
+    position: relative !important;
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Manejo agresivo del video
+    const video = document.getElementById('background-video');
+    const fallback = document.getElementById('fallback-bg');
+      
+    // Animaciones GSAP
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#safeguard-process',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none play none',
+      }
+    });
+
+    // Animación del subtítulo
+    tl.from('.process-subtitle', {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.out'
+    })
+    // Animación del título principal
+    .from('.process-main-title', {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.out'
+    }, '-=0.5')
+    // Animación de la descripción
+    .from('.process-description', {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.out'
+    }, '-=0.6')
+    // Animación de las secciones
+    .from('.process-section', {
+      y: 30,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power2.out'
+    }, '-=0.4');
+
+    // Funcionalidad de toggle para las secciones
+    document.querySelectorAll('.process-section').forEach(section => {
+      const header = section.querySelector('.process-header');
+      const content = section.querySelector('.process-content');
+      const toggle = section.querySelector('.process-toggle');
+      const title = section.querySelector('.process-section-title');
+
+      header?.addEventListener('click', () => {
+        const isActive = section.classList.contains('active');
+        
+        if (isActive) {
+          // Cerrar sección - cambiar de − a +
+          section.classList.remove('active');
+          toggle.textContent = '+';
+          gsap.to(content, {
+            maxHeight: 0,
+            duration: 0.5,
+            ease: 'power2.inOut'
+          });
+          gsap.to(title, {
+            scale: 1,
+            fontWeight: 500,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        } else {
+          // Cerrar otras secciones primero
+          document.querySelectorAll('.process-section.active').forEach(activeSection => {
+            if (activeSection !== section) {
+              activeSection.classList.remove('active');
+              const activeContent = activeSection.querySelector('.process-content');
+              const activeToggle = activeSection.querySelector('.process-toggle');
+              const activeTitle = activeSection.querySelector('.process-section-title');
+              
+              activeToggle.textContent = '+';
+              gsap.to(activeContent, {
+                maxHeight: 0,
+                duration: 0.5,
+                ease: 'power2.inOut'
+              });
+              gsap.to(activeTitle, {
+                scale: 1,
+                fontWeight: 500,
+                duration: 0.3,
+                ease: 'power2.out'
+              });
+            }
+          });
+
+          // Abrir sección actual - cambiar de + a −
+          section.classList.add('active');
+          toggle.textContent = '−';
+          gsap.to(content, {
+            maxHeight: 'auto',
+            duration: 0.5,
+            ease: 'power2.inOut'
+          });
+          gsap.to(title, {
+            scale: 1.05,
+            fontWeight: 700,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,93 @@
+---
+// filepath: c:\Users\Bryan\Desktop\SafeGuard\src\components\ServicesBar.astro
+import barraIcon from '../assets/barra.png';
+import coheteIcon from '../assets/cohete.png';
+import frascosIcon from '../assets/frascos.png';
+import rompecabezaIcon from '../assets/rompecabeza.png';
+---
+
+<section class="absolute left-0 right-0 z-30 transform -translate-y-1/2" style="top: 100vh;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-2xl shadow-2xl py-4 px-6 max-h-[200px] overflow-hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 h-full">
+        
+        <!-- Custom Formulation -->
+        <div class="services-item flex flex-col items-center text-center space-y-2 py-2">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
+            <img
+              src={barraIcon.src}
+              alt="Custom Formulation"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <h3 class="text-sm sm:text-base lg:text-lg font-bold text-gray-800 font-[Antonio] leading-tight">
+            Custom Formulation
+          </h3>
+        </div>
+
+        <!-- Scalable Manufacturing -->
+        <div class="services-item flex flex-col items-center text-center space-y-2 py-2">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
+            <img
+              src={coheteIcon.src}
+              alt="Scalable Manufacturing"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <h3 class="text-sm sm:text-base lg:text-lg font-bold text-gray-800 font-[Antonio] leading-tight">
+            Scalable Manufacturing
+          </h3>
+        </div>
+
+        <!-- Precision Filling & Labeling -->
+        <div class="services-item flex flex-col items-center text-center space-y-2 py-2">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
+            <img
+              src={frascosIcon.src}
+              alt="Precision Filling & Labeling"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <h3 class="text-sm sm:text-base lg:text-lg font-bold text-gray-800 font-[Antonio] leading-tight">
+            Precision Filling & Labeling
+          </h3>
+        </div>
+
+        <!-- Branding & Packaging -->
+        <div class="services-item flex flex-col items-center text-center space-y-2 py-2">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
+            <img
+              src={rompecabezaIcon.src}
+              alt="Branding & Packaging"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <h3 class="text-sm sm:text-base lg:text-lg font-bold text-gray-800 font-[Antonio] leading-tight">
+            Branding & Packaging
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animaciones para los elementos de servicios
+  gsap.from('.services-item', {
+    duration: 0.8,
+    y: 50,
+    opacity: 0,
+    stagger: 0.2,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '.services-item',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    }
+  });
+</script>

@@ -2,9 +2,9 @@
 import '../styles/global.css';
 ---
 
-<header class="bg-transparent fixed w-full top-0 z-50 pt-5 font-bold" style="font-family: 'Montserrat', sans-serif;">
+<header class="bg-transparent fixed w-full top-0 z-50 py-5 font-bold font-[Montserrat]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-20 space-x-10">
       <!-- Logo -->
       <div class="flex items-center">
         <div class="flex-shrink-0 flex items-center">
@@ -15,31 +15,31 @@ import '../styles/global.css';
       </div>
 
       <!-- Navigation -->
-      <nav class="hidden xl:block">
-        <div class="ml-10 flex items-baseline space-x-8">
-          <a href="#why-choose-us" class="header-nav-link text-black hover:text-blue-600 px-3 py-2 text-sm font-medium uppercase tracking-wide relative overflow-hidden font-montserrat">
-            <span class="relative z-10 text-xl">WHY CHOOSE US</span>
-            <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
-          </a>
-          <a href="#solutions" class="header-nav-link text-black hover:text-blue-600 px-3 py-2 text-sm font-medium uppercase tracking-wide relative overflow-hidden font-montserrat">
-            <span class="relative z-10 text-xl">SOLUTIONS</span>
-            <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
-          </a>
-          <a href="#from-lab-to-launch" class="header-nav-link text-black hover:text-blue-600 px-3 py-2 text-sm font-medium uppercase tracking-wide relative overflow-hidden font-montserrat">
-            <span class="relative z-10 text-xl">FROM LAB TO LAUNCH</span>
-            <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
-          </a>
-          <a href="#contact" class="header-nav-link text-black hover:text-blue-600 px-3 py-2 text-sm font-medium uppercase tracking-wide relative overflow-hidden font-montserrat">
-            <span class="relative z-10 text-xl">CONTACT</span>
-            <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
-          </a>
-        </div>
-      </nav>
+    <nav class="hidden xl:block">
+      <div class="flex items-baseline space-x-13 lg:gap-5">
+        <a href="#why-choose-us" class="header-nav-link text-black hover:text-blue-600 text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+        <span class="relative z-10 text-xl">WHY CHOOSE US</span>
+        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+        </a>
+        <a href="#solutions" class="header-nav-link text-black hover:text-blue-600 text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+        <span class="relative z-10 text-xl">SOLUTIONS</span>
+        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+        </a>
+        <a href="#from-lab-to-launch" class="header-nav-link text-black hover:text-blue-600 text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+        <span class="relative z-10 text-xl">FROM LAB TO LAUNCH</span>
+        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+        </a>
+        <a href="#contact" class="header-nav-link text-black hover:text-blue-600 text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+        <span class="relative z-10 text-xl">CONTACT</span>
+        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+        </a>
+      </div>
+    </nav>
 
       <!-- Mobile menu button -->
       <div class="xl:hidden">
-        <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
-          <span class="sr-only font-montserrat">Open main menu</span>
+        <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+          <span class="sr-only ">Open main menu</span>
           <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
             <path class="hamburger-line" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             <path class="close-line hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -50,18 +50,18 @@ import '../styles/global.css';
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="xl:hidden hidden bg-transparent shadow-lg font-montserrat">
+  <div id="mobile-menu" class="xl:hidden hidden">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a href="#why-choose-us" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide font-montserrat">
+      <a href="#why-choose-us" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
         WHY CHOOSE US
       </a>
-      <a href="#solutions" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide font-montserrat">
+      <a href="#solutions" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
         SOLUTIONS
       </a>
-      <a href="#from-lab-to-launch" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide font-montserrat">
+      <a href="#from-lab-to-launch" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
         FROM LAB TO LAUNCH
       </a>
-      <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide font-montserrat">
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
         CONTACT
       </a>
     </div>
@@ -123,18 +123,14 @@ import '../styles/global.css';
     onEnter: () => {
       gsap.to('header', {
         duration: 0.3,
-        backgroundColor: 'rgba(255, 255, 255, 0.95)',
         backdropFilter: 'blur(10px)',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
         ease: 'power2.out'
       });
     },
     onLeaveBack: () => {
       gsap.to('header', {
         duration: 0.3,
-        backgroundColor: 'rgba(255, 255, 255, 1)',
         backdropFilter: 'blur(0px)',
-        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
         ease: 'power2.out'
       });
     }

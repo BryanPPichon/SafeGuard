@@ -293,7 +293,7 @@ import '../styles/global.css';
         if (isActive) {
           // Cerrar sección - cambiar de − a +
           section.classList.remove('active');
-          toggle.textContent = '+';
+          if (toggle) toggle.textContent = '+';
           gsap.to(content, {
             maxHeight: 0,
             duration: 0.5,
@@ -314,7 +314,7 @@ import '../styles/global.css';
               const activeToggle = activeSection.querySelector('.process-toggle');
               const activeTitle = activeSection.querySelector('.process-section-title');
               
-              activeToggle.textContent = '+';
+              if (activeToggle) activeToggle.textContent = '+';
               gsap.to(activeContent, {
                 maxHeight: 0,
                 duration: 0.5,
@@ -331,7 +331,7 @@ import '../styles/global.css';
 
           // Abrir sección actual - cambiar de + a −
           section.classList.add('active');
-          toggle.textContent = '−';
+          if (toggle) toggle.textContent = '−';
           gsap.to(content, {
             maxHeight: 'auto',
             duration: 0.5,

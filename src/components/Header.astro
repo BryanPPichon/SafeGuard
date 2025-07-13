@@ -2,14 +2,16 @@
 import '../styles/global.css';
 ---
 
-<header class="bg-transparent fixed w-full top-0 z-50 py-5 font-bold font-[Montserrat]">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<header class="bg-transparent fixed w-full top-0 z-50 font-bold font-[Montserrat] transition-colors duration-300" id="main-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
     <div class="flex items-center justify-between h-20 space-x-10">
       <!-- Logo -->
       <div class="flex items-center">
         <div class="flex-shrink-0 flex items-center">
           <div class="mr-3">
-            <img src="/src/assets/LOGO.png" alt="Safeguard Laboratories Logo" class="w-60 object-contain">
+            <a href="/">
+              <img src="/src/assets/LOGO.png" alt="Safeguard Laboratories Logo" class="w-60 object-contain pt-6">
+            </a>
           </div>
         </div>
       </div>
@@ -17,21 +19,21 @@ import '../styles/global.css';
       <!-- Navigation -->
     <nav class="hidden xl:block">
       <div class="flex items-baseline space-x-13 lg:gap-5">
-        <a href="#why-choose-us" class="header-nav-link text-black hover:text-blue-600 text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+        <a href="#why-choose-us" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
         <span class="relative z-10 text-xl">WHY CHOOSE US</span>
-        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
         </a>
-        <a href="#solutions" class="header-nav-link text-black hover:text-blue-600 text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+        <a href="#solutions" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
         <span class="relative z-10 text-xl">SOLUTIONS</span>
-        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
         </a>
-        <a href="#from-lab-to-launch" class="header-nav-link text-black hover:text-blue-600 text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+        <a href="#from-lab-to-launch" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
         <span class="relative z-10 text-xl">FROM LAB TO LAUNCH</span>
-        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
         </a>
-        <a href="#contact" class="header-nav-link text-black hover:text-blue-600 text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+        <a href="#contact" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
         <span class="relative z-10 text-xl">CONTACT</span>
-        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300"></div>
+        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
         </a>
       </div>
     </nav>
@@ -116,20 +118,23 @@ import '../styles/global.css';
   });
 
   // Animación de scroll para el header
+  const header = document.getElementById('main-header');
   ScrollTrigger.create({
     trigger: 'body',
     start: 'top -10',
     end: 'bottom bottom',
     onEnter: () => {
-      gsap.to('header', {
+      gsap.to(header, {
         duration: 0.3,
+        backgroundColor: 'rgba(255,255,255,1)',
         backdropFilter: 'blur(10px)',
         ease: 'power2.out'
       });
     },
     onLeaveBack: () => {
-      gsap.to('header', {
+      gsap.to(header, {
         duration: 0.3,
+        backgroundColor: 'rgba(255,255,255,0)',
         backdropFilter: 'blur(0px)',
         ease: 'power2.out'
       });
@@ -209,7 +214,9 @@ import '../styles/global.css';
 
 <style>
   header {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: background-color 0.3s, backdrop-filter 0.3s;
   }
 </style>

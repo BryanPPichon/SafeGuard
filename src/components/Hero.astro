@@ -1,98 +1,46 @@
 ---
 import bottleImage from '../assets/FRASCO_BANNER_.png';
+import logoIcon from '../assets/icono_logo.png';
 import '../styles/global.css';
 ---
 
-<section class="relative bg-gray-100 min-h-screen flex items-start overflow-hidden sm:pt-20 lg:p-30 ">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-25">
-      
-      <!-- Contenido de texto -->
-      <div class="space-y-6 lg:space-y-8 text-center lg:text-left">
-        <div class="space-y-2 lg:space-y-4">
-          <div class="w-full max-w-[600px] mx-auto lg:mx-0">
-            <h1 class="hero-title text-gray-800 leading-tight w-full font-[Antonio]">
-              <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[8.5rem] w-full whitespace-nowrap overflow-hidden">ELEVATE YOUR</span>
-              <span class="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[4.97rem] w-full whitespace-nowrap overflow-hidden">MANUFACTURING GAME</span>
-            </h1>
-          </div>
-        </div>
-        
-        <div class="hero-subtitle mt-15 mb-16 ml-2">
-          <div class="text-xl text-black 2xl:text-[1.81rem]">
-            <span>YOUR <span class="text-blue-600 font-black">PRODUCT</span>, OUR <span class="text-blue-600 font-black">PASSION</span></span>
-          </div>
-          <div class="text-xl text-black 2xl:text-[1.81rem]">
-            <p>Seamless Liquid Manufacturing Solutions</p>
-            <p>| From Lab to Launch</p>
-          </div>
-        </div>
-        
-        <div class="hero-cta mx-auto lg:mx-0">
-          <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 text-base sm:text-[1.75rem] uppercase tracking-wide rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-0 outline-none opacity-100 visible w-full sm:w-auto">
-            START YOUR PROJECT TODAY
-          </button>
-        </div>
-      </div>
+<section class="relative bg-[#f7f7f8] w-full min-h-[100vh] flex items-center justify-center overflow-hidden py-10 sm:py-16">
+  {/* Logos de las esquinas */}
+  <img src={logoIcon.src} alt="Logo esquina" class="hidden sm:block absolute -left-30 -bottom-50 w-40 sm:w-45 2xl:w-64 opacity-90 pointer-events-none select-none scale-250" />
+  <img src={logoIcon.src} alt="Logo esquina" class="hidden sm:block absolute -right-40 -top-0 w-40 sm:w-45 2xl:w-64 opacity-90 pointer-events-none select-none scale-250" />
 
-      <!-- Imagen principal -->
-    <div class="relative flex justify-center items-start lg:mb-15">
-      <div class="hero-bottle w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-md">
-        <img
-        src={bottleImage.src}
-        alt="Liquid manufacturing bottle with dropper"
-        class="w-full h-full object-contain filter drop-shadow-2xl"
-        />
+  <div class="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+    {/* Columna izquierda: texto */}
+    <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left p-5">
+    <h1 class="font-[Antonio] text-[#464b68] text-[clamp(5rem,7vw,8.4rem)] font-normal leading-none mb-2 tracking-tight">
+      ELEVATE YOUR
+    </h1>
+      <h2 class="font-[Antonio] text-[#464b68] text-[clamp(2.86rem,4.1vw,4.85rem)] font-normal leading-none mb-6 xl:mb-10 tracking-tight">
+        MANUFACTURING GAME
+      </h2>
+      <div class="mb-6 xl:mb-5">
+        <p class="text-black sm:text-md 2xl:text-2xl font-[Montserrat] lg:pl-2">
+          YOUR <span class="font-bold text-[#015c9f]">PRODUCT</span>. OUR <span class="font-bold text-[#015c9f]">PASSION</span>
+        </p>
+        <p class="text-black sm:text-md 2xl:text-2xl font-[Montserrat] leading-tight lg:pl-2">
+          Seamless Liquid Manufacturing Solutions<br class="hidden sm:block" />
+          | From Lab to Launch
+        </p>
       </div>
+      <a href="#contact" class="inline-block mt-2 xl:mt-10">
+        <button class="bg-[#ffba00] hover:bg-[#daa300] text-black font-[Antonio] font-bold sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl px-8 py-3 rounded-md shadow-lg transition-all duration-200 border-none outline-none">
+          START YOUR PROJECT TODAY
+        </button>
+      </a>
     </div>
+    {/* Columna derecha: imagen del frasco */}
+    <div class="w-full lg:w-1/2 flex items-center justify-center mb-8 lg:mb-0">
+      <img src={bottleImage.src} alt="Frasco" class="max-w-[280px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[480px] w-full h-auto drop-shadow-xl" />
     </div>
   </div>
 </section>
 
-<script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Esperar a que el DOM esté completamente cargado
-  document.addEventListener('DOMContentLoaded', () => {
-    // Animaciones de entrada
-    const tl = gsap.timeline();
-
-    // Animación del título
-    tl.from('.hero-title span', {
-      duration: 1,
-      y: 100,
-      opacity: 0,
-      stagger: 0.2,
-      ease: 'power3.out'
-    });
-
-    // Animación del subtítulo
-    tl.from('.hero-subtitle > *', {
-      duration: 0.8,
-      y: 50,
-      opacity: 0,
-      stagger: 0.1,
-      ease: 'power2.out'
-    }, '-=0.5');
-
-    // Animación de la botella
-    tl.from('.hero-bottle', {
-      duration: 1,
-      y: 50,
-      opacity: 0,
-      scale: 0.8,
-      ease: 'power3.out'
-    }, '-=0.8');
-
-    // Animación del botón
-    tl.from('.hero-cta', {
-      duration: 0.8,
-      y: 50,
-      opacity: 0,
-      ease: 'power2.out'
-    }, '-=0.2');
-  });
-</script>
+<style>
+    @media (max-width: 1080px) {
+    }
+</style>

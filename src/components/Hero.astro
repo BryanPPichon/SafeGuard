@@ -6,19 +6,19 @@ import '../styles/global.css';
 
 <section class="relative bg-[#f7f7f8] w-full min-h-[100vh] flex items-center justify-center overflow-hidden py-10 sm:py-16">
   {/* Logos de las esquinas */}
-  <img src={logoIcon.src} alt="Logo esquina" class="hidden sm:block absolute -left-30 -bottom-50 w-40 sm:w-45 2xl:w-64 opacity-90 pointer-events-none select-none scale-250" />
-  <img src={logoIcon.src} alt="Logo esquina" class="hidden sm:block absolute -right-40 -top-0 w-40 sm:w-45 2xl:w-64 opacity-90 pointer-events-none select-none scale-250" />
+  <img src={logoIcon.src} alt="Logo esquina" class="hidden sm:block absolute -left-30 -bottom-50 w-40 sm:w-45 2xl:w-64 opacity-90 pointer-events-none select-none scale-250 hero-corner hero-corner-left" />
+  <img src={logoIcon.src} alt="Logo esquina" class="hidden sm:block absolute -right-40 -top-0 w-40 sm:w-45 2xl:w-64 opacity-90 pointer-events-none select-none scale-250 hero-corner hero-corner-right" />
 
   <div class="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
     {/* Columna izquierda: texto */}
-    <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left p-5">
-    <h1 class="font-[Antonio] text-[#464b68] text-[clamp(5rem,7vw,8.4rem)] font-normal leading-none mb-2 tracking-tight">
-      ELEVATE YOUR
-    </h1>
-      <h2 class="font-[Antonio] text-[#464b68] text-[clamp(2.86rem,4.1vw,4.85rem)] font-normal leading-none mb-6 xl:mb-10 tracking-tight">
+    <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left p-5 hero-left">
+      <h1 class="font-[Antonio] text-[#464b68] text-[clamp(5rem,7vw,8.4rem)] font-normal leading-none mb-2 tracking-tight hero-title">
+        ELEVATE YOUR
+      </h1>
+      <h2 class="font-[Antonio] text-[#464b68] text-[clamp(2.86rem,4.1vw,4.85rem)] font-normal leading-none mb-6 xl:mb-10 tracking-tight hero-subtitle">
         MANUFACTURING GAME
       </h2>
-      <div class="mb-6 xl:mb-5">
+      <div class="mb-6 xl:mb-5 hero-desc">
         <p class="text-black sm:text-md 2xl:text-2xl font-[Montserrat] lg:pl-2">
           YOUR <span class="font-bold text-[#015c9f]">PRODUCT</span>. OUR <span class="font-bold text-[#015c9f]">PASSION</span>
         </p>
@@ -27,20 +27,78 @@ import '../styles/global.css';
           | From Lab to Launch
         </p>
       </div>
-      <a href="#contact" class="inline-block mt-2 xl:mt-10">
-        <button class="bg-[#ffba00] hover:bg-[#daa300] text-black font-[Antonio] font-bold sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl px-8 py-3 rounded-md shadow-lg transition-all duration-200 border-none outline-none">
+      <a href="#contact" class="inline-block mt-2 xl:mt-10 hero-btn-link">
+        <button class="bg-[#ffba00] hover:bg-[#daa300] text-black font-[Antonio] font-bold sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl px-8 py-3 rounded-md shadow-lg transition-all duration-200 border-none outline-none hero-btn">
           START YOUR PROJECT TODAY
         </button>
       </a>
     </div>
     {/* Columna derecha: imagen del frasco */}
-    <div class="w-full lg:w-1/2 flex items-center justify-center mb-8 lg:mb-0">
-      <img src={bottleImage.src} alt="Frasco" class="max-w-[280px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[480px] w-full h-auto drop-shadow-xl" />
+    <div class="w-full lg:w-1/2 flex items-center justify-center mb-8 lg:mb-0 hero-right">
+      <img src={bottleImage.src} alt="Frasco" class="max-w-[280px] sm:max-w-[280px] md:max-w-[300px] lg:max-w-[480px] w-full h-auto drop-shadow-xl hero-bottle" />
     </div>
   </div>
 </section>
 
-<style>
-    @media (max-width: 1080px) {
-    }
-</style>
+<script>
+  import { gsap } from 'gsap';
+
+  if (typeof window !== "undefined") {
+    document.addEventListener('DOMContentLoaded', () => {
+      const tl = gsap.timeline();
+
+      // Logos de las esquinas
+      tl.from('.hero-corner-left', {
+        x: -80,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out'
+      })
+      .from('.hero-corner-right', {
+        x: 80,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out'
+      }, '-=0.7');
+
+      // Título principal
+      tl.from('.hero-title', {
+        y: 60,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, '-=0.5');
+
+      // Subtítulo
+      tl.from('.hero-subtitle', {
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out'
+      }, '-=0.6');
+
+      // Descripción
+      tl.from('.hero-desc', {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.out'
+      }, '-=0.5');
+
+      // Botón
+      tl.fromTo('.hero-btn',
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.7)' },
+        '-=0.4'
+      );
+
+      // Imagen del frasco
+      tl.from('.hero-bottle', {
+        x: 80,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out'
+      }, '-=0.7');
+    });
+  }
+</script>

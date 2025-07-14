@@ -1,0 +1,88 @@
+---
+import bottleImage from '../assets/FRASCO_BANNER_.png';
+---
+
+<section class="banner-full-section w-screen h-screen min-h-[600px] flex flex-col justify-center items-center bg-[#f6f6f6] relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-2 bg-[#01ffff]"></div>
+  <div class="flex flex-col md:flex-row justify-center items-center w-full h-full max-w-[1400px] mx-auto px-4 z-10">
+    <!-- Imagen del frasco -->
+    <div class="flex justify-center items-center w-full md:w-1/2 mb-8 md:mb-0">
+      <img src={bottleImage.src} alt="Frasco" class="max-h-[400px] md:max-h-[500px] w-auto object-contain drop-shadow-xl banner-bottle" />
+    </div>
+    <!-- Texto y botón -->
+    <div class="flex flex-col justify-center items-center md:items-start w-full md:w-1/2 text-center md:text-left gap-6">
+      <h2 class="font-[Antonio] text-[#464b68] text-[48px] md:text-[64px] font-normal leading-none banner-title">LET’S BUILD<br><span class="font-[Antonio] text-[#464b68]">SOMETHING</span></h2>
+      <h3 class="font-[Antonio] text-[#015c9f] text-[32px] md:text-[40px] font-extralight leading-none tracking-wide banner-subtitle">EXCEPTIONAL TOGETHER</h3>
+      <p class="font-[Montserrat] text-[#222] text-[18px] md:text-[20px] max-w-xl mt-2 banner-desc">
+        <span class="font-bold">Ready to bring your product </span> to life<br />
+        <span>or scale your existing production?</span>
+      </p>
+      <button class="mt-4 px-8 py-3 bg-[#ffba00] text-black font-[Antonio] font-bold text-[22px] rounded-md shadow-md hover:bg-[#ffe066] transition-all banner-btn">
+        START YOUR PROJECT TODAY
+      </button>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  if (typeof window !== "undefined") {
+    const animateBanner = () => {
+      const tl = gsap.timeline();
+      tl.from('.banner-title', {
+        y: 60,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      });
+      tl.from('.banner-subtitle', {
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out'
+      }, '-=0.6');
+      tl.from('.banner-desc', {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.out'
+      }, '-=0.5');
+      tl.fromTo('.banner-btn',
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.7)' },
+        '-=0.4'
+      );
+      tl.from('.banner-bottle', {
+        x: 80,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out'
+      }, '-=0.7');
+    };
+    document.addEventListener('DOMContentLoaded', () => {
+      const section = document.querySelector('.banner-full-section');
+      if (!section) return;
+      const observer = new window.IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateBanner();
+          }
+        });
+      }, { threshold: 0.4 });
+      observer.observe(section);
+    });
+  }
+</script>
+    </div>
+  </div>
+</section>
+
+<style>
+  .font-antonio {
+    font-family: 'Antonio', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+  }
+</style>

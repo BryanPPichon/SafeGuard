@@ -3,7 +3,7 @@
 import MarqueeBanner from '../components/MarqueeBanner.astro';
 ---
 
-<section class="relative w-full h-[90vh] overflow-hidden bg-cover bg-center" style="background-image: url('/fondo6.png');">
+<section class="certified-facility-section relative w-full h-[90vh] overflow-hidden bg-cover bg-center" style="background-image: url('/fondo6.png');">
   <div class="absolute top-0 left-0 w-full z-20">
     <MarqueeBanner />
   </div>
@@ -11,17 +11,17 @@ import MarqueeBanner from '../components/MarqueeBanner.astro';
   <div class="relative flex flex-col md:flex-row items-center justify-center h-full z-10 max-w-6xl mx-auto gap-4 md:gap-8" style="padding-top: 20px;">
     <div class="flex flex-col justify-center items-center text-center md:text-left md:items-center md:justify-center md:max-w-[800px]">
       <div class="max-w-7xl flex flex-col items-center gap-0">
-        <div class="title-line1 font-antonioLight text-[#01ffff] text-[35px] leading-none">STATE-OF-THE-ART</div>
-        <div class="title-line2 font-antonioLight text-[#01ffff] text-[48px] leading-none">MANUFACTURING</div>
-        <div class="title-line3 font-antonioLight text-[#01ffff] text-[72px] leading-none">IN DALLAS, TX</div>
+        <div class="title-line1 font-antonioLight text-[#01ffff] text-[35px] leading-none cf-title1">STATE-OF-THE-ART</div>
+        <div class="title-line2 font-antonioLight text-[#01ffff] text-[48px] leading-none cf-title2">MANUFACTURING</div>
+        <div class="title-line3 font-antonioLight text-[#01ffff] text-[72px] leading-none cf-title3">IN DALLAS, TX</div>
       </div>
-      <p class="description font-montserrat font-extralight text-white text-[20px] max-w-2xl w-full text-center md:text-center md:mx-0 mt-6 leading-tight md:leading-snug">
+      <p class="description font-montserrat font-extralight text-white text-[20px] max-w-2xl w-full text-center md:text-center md:mx-0 mt-6 leading-tight md:leading-snug cf-desc">
         <span class="block w-full text-center">Our fully certified facility is built for</span>
         <span class="block w-full text-center tracking-normal" style="letter-spacing: -0.04em;">performance, scale, and speed.</span>
       </p>
     </div>
     <div class="flex justify-center items-center md:max-w-[340px]">
-      <img src="/mapa6.png" alt="Mapa" class="mb-6 md:mb-0 w-full" style="z-index:2;" />
+      <img src="/mapa6.png" alt="Mapa" class="mb-6 md:mb-0 w-full cf-map transition-transform duration-300" style="z-index:2;" />
     </div>
   </div>
 
@@ -68,7 +68,7 @@ import MarqueeBanner from '../components/MarqueeBanner.astro';
       .title-line2 { font-size: 3.5rem !important; letter-spacing: 0.01em !important; }
       .title-line3 { font-size: 5.8rem !important; letter-spacing: -0.065em !important; }
       .marquee-text { font-size: 3.5rem !important; }
-      .description { font-size: 1rem !important; line-height: 1.15 !important; margin-top: 1.5rem !important;letter-spacing: 0.055em !important; }
+      .description { font-size: 1rem !important; line-height: 1.15 !important; margin-top: 1.5rem !important;letter-spacing: 0.0em !important; }
     }
     @media (min-width: 1025px) {
       .title-line1 { font-size: 48px !important; letter-spacing: 0.0em !important; }
@@ -83,6 +83,7 @@ import MarqueeBanner from '../components/MarqueeBanner.astro';
 <script>
   import { gsap } from 'gsap';
   window.addEventListener('DOMContentLoaded', () => {
+    // Animación banners
     const banners = [
       document.querySelector('#banner-top .marquee-text'),
       document.querySelector('#banner-bottom .marquee-text')
@@ -101,5 +102,37 @@ import MarqueeBanner from '../components/MarqueeBanner.astro';
         });
       }
     });
+
+    // Animación de entrada texto
+    const animateText = () => {
+      const tl = gsap.timeline();
+      tl.from('.cf-title1', { y: 60, opacity: 0, duration: 0.6, ease: 'power3.out' });
+      tl.from('.cf-title2', { y: 40, opacity: 0, duration: 0.5, ease: 'power3.out' }, '-=0.4');
+      tl.from('.cf-title3', { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3');
+      tl.from('.cf-desc', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, '-=0.3');
+    };
+    // Intersection Observer para animar al entrar en viewport
+    const section = document.querySelector('.certified-facility-section');
+    if (section) {
+      const observer = new window.IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateText();
+          }
+        });
+      }, { threshold: 0.4 });
+      observer.observe(section);
+    }
+
+    // Animación hover mapa
+    const map = document.querySelector('.cf-map');
+    if (map) {
+      map.addEventListener('mouseenter', () => {
+        gsap.to(map, { scale: 1.15, duration: 0.4, ease: 'power2.out' });
+      });
+      map.addEventListener('mouseleave', () => {
+        gsap.to(map, { scale: 1, duration: 0.4, ease: 'power2.out' });
+      });
+    }
   });
 </script>

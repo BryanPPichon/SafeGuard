@@ -7,7 +7,7 @@ import '../styles/global.css';
   id="why-choose-us"
   class="relative bg-gray-50 overflow-hidden pt-16 sm:pt-20 lg:pt-30 pb-16 sm:pb-20 lg:pb-34"
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 w-full">
     <!-- 4 textos de esquina - responsivos -->
     <!-- Esquinas responsivas: banda arriba y abajo en móvil, esquinas en desktop -->
     <!-- Banda inferior móvil: las 4 oraciones en dos filas -->
@@ -38,22 +38,46 @@ import '../styles/global.css';
     </div>
 
     <!-- Bloque central -->
-    <div class="max-w-4xl mx-auto text-center py-16 sm:py-20 lg:py-30 px-4 sm:px-6">
+    <div class="w-full flex flex-col items-center justify-center max-w-4xl mx-auto text-center py-16 sm:py-20 lg:py-30 px-4 sm:px-6 min-h-[300px] h-full">
       <!-- Primera línea: Antonio Bold, responsivo -->
       <h2
         class="scaling-title text-[#464b68] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[8.5rem] mb-2 pb-0 leading-none tracking-tight tracking-tighter"
-        style="font-family: 'Antonio', sans-serif; font-weight: 300;"
+        style="font-family: 'Antonio', sans-serif; font-weight: 300; margin-bottom: 0.2em;"
       >
         BUILT TO SCALE
       </h2>
 
       <!-- Segunda línea: Antonio ExtraLight, responsivo -->
-      <h3
-        class="scaling-subtitle text-[#015c9f] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[4.97rem] tracking-[0.02em] mt-[-0.5rem] mb-6 leading-none"
-        style="font-family: 'Antonio', sans-serif; font-weight: 300;"
-      >
-        BACKED BY SCIENCE
-      </h3>
+<h3
+  class="scaling-subtitle text-[#015c9f] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[4.97rem] tracking-[0.02em] mb-6 leading-none"
+  style="font-family: 'Antonio', sans-serif; font-weight: 300;"
+>
+  BACKED BY SCIENCE
+</h3>
+
+      <style>
+        @media (max-width: 400px)  {
+          .scaling-title { margin-bottom: 0.4em !important; }
+          .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: -0.022em !important; }
+        }
+        @media (min-width: 401px) and (max-width: 770px) {
+          .scaling-title { margin-bottom: 0.4em !important; }
+          .scaling-subtitle { margin-top: -0.6em !important; letter-spacing: 0.01em !important; }
+        }
+        @media (min-width: 771px) and (max-width: 1020px) {
+          .scaling-title { margin-bottom: 0.4em !important; }
+         .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: 0.01em !important; }
+        }
+        @media (min-width: 1021px) and (max-width: 1024px){
+          .scaling-title { margin-bottom: 0.3em !important; }
+          .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: -0.001em !important; }
+        }
+         @media (min-width: 1536px) and (max-width: 2920px)  {
+          .scaling-title { margin-bottom: 0.3em !important; }
+          .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: 0.025em !important; }
+        }
+      </style>
+
 
       <!-- Texto descriptivo: Montserrat, responsivo -->
       <div class="scaling-text font-montserrat text-sm sm:text-base md:text-lg lg:text-xl text-black max-w-3xl mx-auto">
@@ -61,7 +85,7 @@ import '../styles/global.css';
           Formulation, Volume, Compliance
         </p>
         <p class="text-black leading-none mt-0 ">
-          Our turnkey model simplifies your path from concept to shelf,<br class="hidden sm:block">
+          Our turnkey model simplifies your path from concept to shelf,<br>
           delivering speed, quality, and sustainability at every stage.
         </p>
       </div>

@@ -12,25 +12,47 @@ import '../styles/global.css';
     <!-- Título principal -->
     <div class="text-center mb-3 sm:mb-4 lg:mb-5">
       <h2
-        class="core-title text-[#01ffff] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[8.5rem] leading-none mb-0"
-        style="font-family: 'Antonio', sans-serif; font-weight: 300;"
+        class="core-title text-[#01ffff] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[9.5rem] leading-none mb-0"
+        style="font-family: 'Antonio', sans-serif; font-weight: 300; "
       >
         CORE
       </h2>
       <h3
-        class="core-subtitle text-[#01ffff] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[3.2rem] leading-none"
+        class="core-subtitle text-[#01ffff] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[3.2rem] leading-none"
         style="font-family: 'Antonio', sans-serif; font-weight: 300;"
       >
         CAPABILITIES
       </h3>
+      <style>
+        /* Celular */
+        @media (max-width: 400px) {
+          .core-title { font-size: 2.5rem !important; margin-bottom: 0.6em !important; letter-spacing: 0.05em !important; }
+          .core-subtitle { font-size: 1.1rem !important; margin-top: -1.2em !important; letter-spacing: -0.01em !important; }
+        }
+        /* Tablet */
+        @media (min-width: 401px) and (max-width: 900px) {
+          .core-title { font-size: 3.5rem !important; margin-bottom: 0.6em !important; letter-spacing: 0.05em !important; }
+          .core-subtitle { font-size: 1.5rem !important; margin-top: -1.2em !important; letter-spacing: -0.01em !important; }
+        }
+        /* PC estándar */
+        @media (min-width: 901px) and (max-width: 1400px) {
+          .core-title { font-size: 5.5rem !important; margin-bottom: 0.8em !important; letter-spacing: 0.02em !important; }
+          .core-subtitle { font-size: 2.2rem !important; margin-top: -1.90em !important; letter-spacing: -0.009em !important; }
+        }
+        /* Monitores grandes */
+        @media (min-width: 1401px) {
+          .core-title { font-size: 9.5rem !important; margin-bottom: 0.7em !important; letter-spacing: -0.02em !important; }
+          .core-subtitle { font-size: 3.2rem !important; margin-top: -1.90em !important; letter-spacing: 0.01em !important; }
+        }
+      </style>
     </div>
 
     <!-- Texto descriptivo -->
     <div class="text-center mb-6 sm:mb-8 lg:mb-10 max-w-4xl 2xl:max-w-6xl mx-auto">
-      <p class="core-text font-montserrat font-light text-base sm:text-lg 2xl:text-[1.25rem] text-white leading-tight mb-3" style="letter-spacing: 0.02em;">
+      <p class="core-text font-montserrat font-light text-[20px] text-white leading-tight mb-3" style="letter-spacing: 0.02em;">
         We provide full-spectrum liquid manufacturing services that adapt <br> to your needs and scale with your growth.
       </p>
-      <p class="core-text-bold font-montserrat font-light text-base sm:text-lg 2xl:text-[1.25rem] text-white leading-tight" style="letter-spacing: 0.02em;">
+      <p class="core-text-bold font-montserrat font-light text-[20px] text-white leading-tight" style="letter-spacing: 0.02em;">
         Our integrated capabilities reduce complexity and <br><span class="font-bold">accelerate your go-to-market timeline.</span>
       </p>
     </div>
@@ -200,10 +222,26 @@ import '../styles/global.css';
   .hexagon-shape .text-black {
     color: #000000 !important;
   }
+  
 
   .group:hover .hexagon-shape .text-black {
     color: #000000 !important;
   }
+.hexagon-shape {
+  position: relative; /* asegúrate de tener esto */
+  z-index: 1;
+}
+
+.hexagon-shape::before {
+  content: "";
+  position: absolute;
+  /* ampliamos un poco el área para que el borde se vea */
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  clip-path: inherit;            /* mantiene la forma hexagonal */
+  border: 4px solid rgba(1,255,255,0.8);
+  filter: blur(4px);             /* difumina ese borde */
+  z-index: -1;                   /* queda detrás del hexágono */
+}
 
   /* Estilos específicos para el botón */
   .core-start-btn,

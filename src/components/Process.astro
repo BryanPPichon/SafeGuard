@@ -41,15 +41,15 @@ import '../styles/global.css';
     
     <!-- Título principal -->
     <div class="text-center mb-8 sm:mb-12 lg:mb-16">
-      <p class="process-subtitle text-white text-sm sm:text-base md:text-lg mb-3 font-montserrat font-light tracking-wide">
+<p class="process-title-0 process-subtitle text-white mb-3 tracking-wide" style="font-size: 35.2px; font-family: 'Antonio Light', 'Antonio', sans-serif; font-weight: 300; margin-bottom: -0.1em;">
         FROM CONCEPT TO COMPLETION:
       </p>
-      <h1 class="process-main-title text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-light" style="font-family: 'Antonio', sans-serif;">
-        THE SAFEGUARD<br>
-        <span class="block">PROCESS</span>
+      <h1 class="process-main-title text-white font-light" style="font-family: 'Antonio', sans-serif; line-height: 1;">
+        <span class="process-title-1 block" style="font-size: 48px; margin-bottom: 0.1em; margin-top: 0.05em; font-weight: 300;">THE SAFEGUARD</span>
+        <span class="process-title-2 block" style="font-size: 80px; margin-top: 0.09em; ">PROCESS</span>
       </h1>
-      <p class="process-description text-white text-sm sm:text-base md:text-lg mt-4 max-w-4xl mx-auto font-montserrat font-normal leading-relaxed">
-        Our process is engineered to reduce friction and accelerate results<br class="hidden sm:block">
+<p class="process-description text-white mt-4 max-w-4xl mx-auto font-montserrat font-normal" style="font-size: 20px; line-height: 1;">
+        <b>Our process is engineered to reduce friction and accelerate results</b><br class="hidden sm:block">
         Whether you're launching a new product or scaling an existing one,<br class="hidden sm:block">
         we guide you through every step with precision and transparency
       </p>
@@ -74,9 +74,7 @@ import '../styles/global.css';
           <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
             <div class="pt-4">
               <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                We begin with an in-depth consultation to understand your unique requirements, 
-                timeline, and business objectives. Our team analyzes your current formulation 
-                or develops a completely new one based on your specifications.
+                We listen, ask the right questions, and understand your vision and goals
               </p>
             </div>
           </div>
@@ -95,9 +93,7 @@ import '../styles/global.css';
           <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
             <div class="pt-4">
               <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                Using advanced formulation techniques, we create and refine your product. 
-                Extensive testing ensures optimal performance, shelf life, and compliance 
-                with industry standards before moving to production.
+                Our in-house chemists develop and validate your product in our lab
               </p>
             </div>
           </div>
@@ -116,9 +112,7 @@ import '../styles/global.css';
           <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
             <div class="pt-4">
               <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                We handle batching, precision blending, and scalable filling from 
-                1mL to 1 gallon with strict QC standards. Our automated systems 
-                ensure consistency and efficiency at any production volume.
+                We handle batching, precision blending, and scalable filling: from 1mL to 1 gallon
               </p>
             </div>
           </div>
@@ -142,9 +136,7 @@ import '../styles/global.css';
           <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
             <div class="pt-4">
               <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                Our state-of-the-art laboratory conducts rigorous testing and quality assurance 
-                protocols. We ensure your product meets all regulatory standards while 
-                optimizing for performance, stability, and cost-effectiveness.
+                Every run is tested for safety, performance, and full regulatory alignment
               </p>
             </div>
           </div>
@@ -163,9 +155,7 @@ import '../styles/global.css';
           <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
             <div class="pt-4">
               <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                We provide comprehensive packaging solutions that align with your brand 
-                identity. From design to final production, we ensure your product 
-                stands out while maintaining functionality and compliance.
+                We finalize your product with compliant, high-impact packaging and labeling
               </p>
             </div>
           </div>
@@ -205,8 +195,8 @@ import '../styles/global.css';
   
   /* Filtro aplicado directamente al video */
   .video-darkened {
-    filter: brightness(0.7) contrast(1.1) !important;
-    -webkit-filter: brightness(0.7) contrast(1.1) !important;
+    filter: brightness(0.5) contrast(1.1) !important;
+    -webkit-filter: brightness(0.5) contrast(1.1) !important;
   }
   
   /* Asegurar que el video se vea */
@@ -226,6 +216,22 @@ import '../styles/global.css';
   .relative.z-10 {
     z-index: 10 !important;
     position: relative !important;
+  }
+ 
+  @media (max-width: 600px) {
+    .process-title-0 { font-size: 1rem !important; letter-spacing: 0.01em !important; }
+    .process-title-1 { font-size: 2.3rem !important; letter-spacing: -0.04em !important; }
+    .process-title-2 { font-size: 2.9rem !important; letter-spacing: 0.1em !important; }
+  }
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .process-title-0 { font-size: 1.5rem !important; letter-spacing: -0.03em !important; }
+    .process-title-1 { font-size: 3rem !important; letter-spacing: -0.023em !important; }
+    .process-title-2 { font-size: 4rem !important; letter-spacing: 0.10em !important; }
+  }
+  @media (min-width: 1025px) {
+    .process-title-0 { font-size: 28px !important; letter-spacing: -0.04em !important; }
+    .process-title-1 { font-size: 48px !important; letter-spacing: 0.02em !important; }
+    .process-title-2 { font-size: 72px !important; letter-spacing: 0.1em !important; }
   }
 </style>
 

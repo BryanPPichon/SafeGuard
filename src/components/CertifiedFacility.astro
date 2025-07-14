@@ -1,0 +1,105 @@
+
+---
+import MarqueeBanner from '../components/MarqueeBanner.astro';
+---
+
+<section class="relative w-full h-[90vh] overflow-hidden bg-cover bg-center" style="background-image: url('/fondo6.png');">
+  <div class="absolute top-0 left-0 w-full z-20">
+    <MarqueeBanner />
+  </div>
+
+  <div class="relative flex flex-col md:flex-row items-center justify-center h-full z-10 max-w-6xl mx-auto gap-4 md:gap-8" style="padding-top: 20px;">
+    <div class="flex flex-col justify-center items-center text-center md:text-left md:items-center md:justify-center md:max-w-[800px]">
+      <div class="max-w-7xl flex flex-col items-center gap-0">
+        <div class="title-line1 font-antonioLight text-[#01ffff] text-[35px] leading-none">STATE-OF-THE-ART</div>
+        <div class="title-line2 font-antonioLight text-[#01ffff] text-[48px] leading-none">MANUFACTURING</div>
+        <div class="title-line3 font-antonioLight text-[#01ffff] text-[72px] leading-none">IN DALLAS, TX</div>
+      </div>
+      <p class="description font-montserrat font-extralight text-white text-[20px] max-w-2xl w-full text-center md:text-center md:mx-0 mt-6 leading-tight md:leading-snug">
+        <span class="block w-full text-center">Our fully certified facility is built for</span>
+        <span class="block w-full text-center tracking-normal" style="letter-spacing: -0.04em;">performance, scale, and speed.</span>
+      </p>
+    </div>
+    <div class="flex justify-center items-center md:max-w-[340px]">
+      <img src="/mapa6.png" alt="Mapa" class="mb-6 md:mb-0 w-full" style="z-index:2;" />
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 w-full z-20">
+    <MarqueeBanner />
+  </div>
+</section>
+
+<style>
+  .font-antonioLight {
+    font-family: 'Antonio Light', 'Antonio', sans-serif;
+    font-weight: 300;
+  }
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .marquee-text {
+    will-change: transform;
+    display: inline-block;
+    padding-left: 100vw;
+    /* Espaciado para loop */
+  }
+  /* Media queries utilidades */
+  @layer utilities {
+    .title-line1 {
+      letter-spacing: 0.01em;
+    }
+    .title-line2 {
+      letter-spacing: 0.01em;
+    }
+    .title-line3 {
+      letter-spacing: 0.01em;
+    }
+    @media (max-width: 600px) {
+      .title-line1 { font-size: 2.5rem !important; letter-spacing: 0.01em !important; }
+      .title-line2 { font-size: 2.5rem !important; letter-spacing: 0.035em !important; }
+      .title-line3 { font-size: 3.5rem !important; letter-spacing: 0.0em !important; }
+      .marquee-text { font-size: 2.2rem !important; }
+      .description { font-size: 1rem !important; line-height: 1.1 !important; margin-top: 1.5rem !important; letter-spacing: -0.07em !important;}
+      
+    }
+    @media (min-width: 601px) and (max-width: 1024px) {
+      .title-line1 { font-size: 3.5rem !important; letter-spacing: -0.01em !important; }
+      .title-line2 { font-size: 3.5rem !important; letter-spacing: 0.01em !important; }
+      .title-line3 { font-size: 5.8rem !important; letter-spacing: -0.065em !important; }
+      .marquee-text { font-size: 3.5rem !important; }
+      .description { font-size: 1rem !important; line-height: 1.15 !important; margin-top: 1.5rem !important;letter-spacing: 0.055em !important; }
+    }
+    @media (min-width: 1025px) {
+      .title-line1 { font-size: 48px !important; letter-spacing: 0.0em !important; }
+      .title-line2 { font-size: 48px !important; letter-spacing: 0.03em !important; }
+      .title-line3 { font-size: 72px !important; letter-spacing: -0.025em !important; }
+      .marquee-text { font-size: 80px !important; }
+      .description { font-size: 20px !important; line-height: 1.2 !important; margin-top: 2rem !important; letter-spacing: -0.07em !important; }
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  window.addEventListener('DOMContentLoaded', () => {
+    const banners = [
+      document.querySelector('#banner-top .marquee-text'),
+      document.querySelector('#banner-bottom .marquee-text')
+    ];
+    banners.forEach(banner => {
+      if (banner && banner instanceof HTMLElement) {
+        const textWidth = banner.offsetWidth;
+        gsap.to(banner, {
+          x: () => `-${textWidth}px`,
+          duration: 18,
+          ease: 'linear',
+          repeat: -1,
+          modifiers: {
+            x: gsap.utils.unitize(x => parseFloat(x) % (textWidth + window.innerWidth))
+          }
+        });
+      }
+    });
+  });
+</script>

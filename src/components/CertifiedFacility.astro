@@ -9,19 +9,24 @@ import MarqueeBanner from '../components/MarqueeBanner.astro';
   </div>
 
   <div class="relative flex flex-col md:flex-row items-center justify-center h-full z-10 max-w-6xl mx-auto gap-4 md:gap-8" style="padding-top: 20px;">
-    <div class="flex flex-col justify-center items-center text-center md:text-left md:items-center md:justify-center md:max-w-[800px]">
+    <div class="flex flex-col justify-center items-center text-center md:text-left md:items-start md:justify-center md:max-w-[800px] md:pl-8 lg:pl-16 xl:pl-24">
       <div class="max-w-7xl flex flex-col items-center gap-0">
-        <div class="title-line1 font-antonioLight text-[#01ffff] text-[35px] leading-none cf-title1">STATE-OF-THE-ART</div>
-        <div class="title-line2 font-antonioLight text-[#01ffff] text-[48px] leading-none cf-title2">MANUFACTURING</div>
-        <div class="title-line3 font-antonioLight text-[#01ffff] text-[72px] leading-none cf-title3">IN DALLAS, TX</div>
+        <div class="title-line1 font-antonioLight text-[#01ffff] cf-title1 text-[clamp(2.86rem,4.1vw,4.85rem)] animated-title mb-0" style="line-height:1; margin-bottom:0;">STATE-OF-THE-ART</div>
+        <div class="title-line2 font-antonioLight text-[#01ffff] cf-title2 text-[clamp(2.86rem,4.1vw,4.85rem)] animated-title mt-[-0.9em] mb-2 md:mb-3" style="line-height:1; margin-top:-0.3em;">MANUFACTURING</div>
+        <div class="title-line3 font-antonioLight text-[#01ffff] leading-none cf-title3 text-[clamp(5rem,7vw,8.4rem)] lg:-ml-4 animated-title mb-4 md:mb-6">IN DALLAS, TX</div>
       </div>
-      <p class="description font-montserrat font-extralight text-white text-[20px] max-w-2xl w-full text-center md:text-center md:mx-0 mt-6 leading-tight md:leading-snug cf-desc">
-        <span class="block w-full text-center">Our fully certified facility is built for</span>
-        <span class="block w-full text-center tracking-normal" style="letter-spacing: -0.04em;">performance, scale, and speed.</span>
+      <p class="description font-montserrat font-extralight text-white text-[20px] lg:-ml-4 max-w-2xl w-full text-center md:text-center md:mx-0 mt-8 md:mt-10 leading-tight md:leading-snug cf-desc">
+        <span class="block w-full text-center lg:-ml-19 md:text-left md:pl-8 lg:pl-16 xl:pl-24">Our fully certified facility is built for</span>
+        <span class="block w-full text-center lg:-ml-19 md:text-left md:pl-8 lg:pl-16 xl:pl-24 tracking-normal" style="letter-spacing: -0.04em;">performance, scale, and speed.</span>
       </p>
     </div>
-    <div class="flex justify-center items-center md:max-w-[340px]">
-      <img src="/mapa6.png" alt="Mapa" class="mb-6 md:mb-0 w-full cf-map transition-transform duration-300" style="z-index:2;" />
+    <div class="w-full flex items-center justify-center mb-6 md:mb-0 hero-right">
+      <img 
+        src="/mapa6.png" 
+        alt="Mapa" 
+        class="cf-map drop-shadow-xl w-[200px] sm:w-[300px] lg:w-[480px] transition-transform duration-300" 
+        style="z-index:2;" 
+      />
     </div>
   </div>
 
@@ -47,10 +52,10 @@ import MarqueeBanner from '../components/MarqueeBanner.astro';
   /* Media queries utilidades */
   @layer utilities {
     .title-line1 {
-      letter-spacing: 0.01em;
+      letter-spacing: 0.0em;
     }
     .title-line2 {
-      letter-spacing: 0.01em;
+      letter-spacing: 0.00em;
     }
     .title-line3 {
       letter-spacing: 0.01em;
@@ -71,12 +76,20 @@ import MarqueeBanner from '../components/MarqueeBanner.astro';
       .description { font-size: 1rem !important; line-height: 1.15 !important; margin-top: 1.5rem !important;letter-spacing: 0.0em !important; }
     }
     @media (min-width: 1025px) {
-      .title-line1 { font-size: 48px !important; letter-spacing: 0.0em !important; }
-      .title-line2 { font-size: 48px !important; letter-spacing: 0.03em !important; }
-      .title-line3 { font-size: 72px !important; letter-spacing: -0.025em !important; }
-      .marquee-text { font-size: 80px !important; }
-      .description { font-size: 20px !important; line-height: 1.2 !important; margin-top: 2rem !important; letter-spacing: -0.07em !important; }
-    }
+      .title-line1 { letter-spacing: 0.0em !important; }
+      .title-line2 {  letter-spacing: 0.03em !important; }
+      .title-line3 {  letter-spacing: -0.069em !important; }
+      
+       }
+  }
+  .animated-title {
+    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+    cursor: pointer;
+  }
+  .animated-title:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 32px 0 rgba(1,255,255,0.18);
   }
 </style>
 

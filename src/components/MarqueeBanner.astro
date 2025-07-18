@@ -8,6 +8,10 @@
     OUR FULLY CERTIFIED FACILITY IS BUILT FOR PERFORMANCE, SCALE, AND SPEED
     <span style="display:inline-block; width: 16vw;"></span>
     OUR FULLY CERTIFIED FACILITY IS BUILT FOR PERFORMANCE, SCALE, AND SPEED
+     <span style="display:inline-block; width: 16vw;"></span>
+    OUR FULLY CERTIFIED FACILITY IS BUILT FOR PERFORMANCE, SCALE, AND SPEED
+     <span style="display:inline-block; width: 16vw;"></span>
+    OUR FULLY CERTIFIED FACILITY IS BUILT FOR PERFORMANCE, SCALE, AND SPEED
   </div>
 </div>
 
@@ -17,7 +21,7 @@
     font-weight: 300;
   }
   .marquee-banner {
-    height: 88px;
+    height: 176px;
     display: flex;
     align-items: center;
     background: #01ffff;
@@ -28,18 +32,19 @@
     will-change: transform;
     display: inline-block;
     padding-left: 100vw;
+    font-size: 160px;
   }
   @media (max-width: 600px) {
-    .marquee-text { font-size: 2.2rem !important; }
-    .marquee-banner { height: 40px; }
+    .marquee-text { font-size: 4.4rem !important; }
+    .marquee-banner { height: 80px; }
   }
   @media (min-width: 601px) and (max-width: 1024px) {
-    .marquee-text { font-size: 3.5rem !important; }
-    .marquee-banner { height: 64px; }
+    .marquee-text { font-size: 7rem !important; }
+    .marquee-banner { height: 128px; }
   }
   @media (min-width: 1025px) {
-    .marquee-text { font-size: 40px !important; }
-    .marquee-banner { height: 68px; }
+    .marquee-text { font-size: 80px !important; }
+    .marquee-banner { height: 136px; }
   }
 </style>
 
@@ -52,7 +57,7 @@
         const textWidth = banner.offsetWidth;
         gsap.to(banner, {
           x: () => `-${textWidth}px`,
-          duration: 24,
+          duration: 34,
           ease: 'linear',
           repeat: -1,
           modifiers: {

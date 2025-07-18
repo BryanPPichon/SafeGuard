@@ -1,6 +1,6 @@
 ---
 import logoIcon from '../assets/icono_logo.png';
-import microscopeImg from '../assets/2.png';
+import ethicalImg from '../assets/5.png';
 ---
 
 <section class="relative w-full min-h-[100vh] flex items-center justify-center bg-[#f7f7f8] px-4 sm:px-8 lg:px-12 py-10 sm:py-16 overflow-hidden">
@@ -12,24 +12,22 @@ import microscopeImg from '../assets/2.png';
         <img
           src={logoIcon.src}
           alt="Logo"
-          class="w-20 h-20 sm:w-24 sm:h-24 lg:w-38 lg:h-38 lg:absolute lg:top-23 lg:right-182 logo-slide-lab"
+          class="w-20 h-20 sm:w-24 sm:h-24 lg:w-38 lg:h-38 lg:absolute lg:top-27 lg:right-178 logo-slide-lab"
         />
       </div>
       <h2 class="pt-6 sm:pt-8 lg:pt-36 mx-auto lg:ml-24 text-center lg:text-left">
-        <!-- Puedes ajustar el espaciado entre letras con tracking-*, por ejemplo tracking-normal, tracking-tight, tracking-wider, etc. -->
-        <!-- Puedes ajustar el espaciado entre renglones con leading-*, por ejemplo leading-tight, leading-snug, leading-normal, etc. -->
-        <span class="font-[Antonio] text-[#464b68] block leading-[0.95] tracking-[-0.08em] text-[clamp(5rem,7vw,8.4rem)]">R&amp;D LAB,</span>
-        <span class="font-[Antonio] text-[#464b68] block leading-[1.2] tracking-[0.08em] text-[clamp(2.86rem,4.1vw,4.85rem)]">IN-HOUSE</span>
+        <span class="font-[Antonio] text-[#464b68] block leading-[0.95] tracking-[0.08em] text-[clamp(2.86rem,4.1vw,4.85rem)]">ETHICAL</span>
+        <span class="font-[Antonio] text-[#464b68] block leading-[1.2] tracking-[-0.09em] text-[clamp(4rem,6vw,7.4rem)]">MANUFACTURING</span>
       </h2>
       <p class="font-[Montserrat] text-black max-w-xs sm:max-w-sm mx-auto lg:mx-0 mt-4 tracking-normal lg:ml-24 text-center lg:text-left sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-2xl">
-        Custom formulas backed by <br class="hidden sm:block" />science and experience
+        Non-GMO, cruelty-free,<br class="hidden sm:block" />and eco-conscious practices
       </p>
     </div>
     <!-- Columna derecha: imagen -->
     <div class="w-full lg:w-1/2 flex items-center justify-center mb-8 lg:mb-0">
       <img
-        src={microscopeImg.src}
-        alt="Microscopio"
+        src={ethicalImg.src}
+        alt="Ethical Manufacturing"
         class="drop-shadow-xl w-[200px] sm:w-[300px] lg:w-[480px] h-auto mx-auto -mt-6 sm:-mt-10 md:-mt-16 lg:-mt-20"
       />
     </div>
@@ -37,22 +35,21 @@ import microscopeImg from '../assets/2.png';
 </section>
 
 <style>
-  /* Eliminados estilos de tamaño de fuente, ahora se usan utilidades Tailwind y clamp en línea */
+  /* Ajustes responsivos para el logo y texto, igual que SlideLab */
   @media (min-width: 1024px) and (max-width: 1036px) {
     .logo-slide-lab {
-      right: 30rem !important; /* Menos a la derecha en pantallas medianas */
+      right: 30rem !important;
     }
     .text-slide-lab {
       margin-left: 8rem !important;
     }
   }
-
   @media (min-width: 1037px) and (max-width: 1203px) {
     .logo-slide-lab {
-      right:32rem !important; /* Menos a la derecha en pantallas medianas */
+      right: 32rem !important;
     }
     .text-slide-lab {
-      margin-left: 8rem !important;
+      margin-left: 90rem !important;
     }
   }
 </style>

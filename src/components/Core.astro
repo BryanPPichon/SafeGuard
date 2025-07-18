@@ -12,14 +12,12 @@ import '../styles/global.css';
     <!-- Título principal -->
     <div class="text-center mb-3 sm:mb-4 lg:mb-5">
       <h2
-        class="core-title text-[#01ffff] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[9.5rem] leading-none mb-0"
-        style="font-family: 'Antonio', sans-serif; font-weight: 300; "
+        class="core-title font-[Antonio] text-[#01ffff] font-light leading-none mb-0 text-[clamp(3.5rem,7vw,9.5rem)] tracking-[-0.01em]"
       >
         CORE
       </h2>
       <h3
-        class="core-subtitle text-[#01ffff] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[3.2rem] leading-none"
-        style="font-family: 'Antonio', sans-serif; font-weight: 300;"
+        class="core-subtitle font-[Antonio] text-[#01ffff] font-light leading-none text-[clamp(1.1rem,3vw,3.2rem)] tracking-[0.01em] mt-[-1.2em]"
       >
         CAPABILITIES
       </h3>
@@ -159,14 +157,12 @@ import '../styles/global.css';
 
 
     <!-- Botón -->
-    <div class="text-center">
-      <button 
-        id="core-start-button"
-        type="button"
-        class="core-start-btn text-base sm:text-[1.75rem] bg-[#ffba00] hover:bg-yellow-500 text-black font-bold py-3 px-6 sm:py-4 sm:px-8 uppercase tracking-wide rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-0 outline-none opacity-100 visible w-full sm:w-auto"
-      >
-        START YOUR PROJECT TODAY
-      </button>
+    <div class="text-center mt-10 sm:mt-12">
+      <a href="#contact" class="inline-block hero-btn-link">
+        <button class="bg-[#ffba00] hover:bg-[#daa300] text-black font-[Antonio] font-bold sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl px-8 py-3 rounded-md shadow-lg transition-all duration-200 border-none outline-none hero-btn w-full sm:w-auto">
+          START YOUR PROJECT TODAY
+        </button>
+      </a>
     </div>
   </div>
 </section>

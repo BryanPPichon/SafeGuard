@@ -12,14 +12,14 @@ import scalableImg from '../assets/3.png';
         <img
           src={logoIcon.src}
           alt="Logo"
-          class="w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 lg:absolute lg:top-23 lg:right-170 logo-slide-lab"
+          class="w-20 h-20 sm:w-24 sm:h-24 lg:w-38 lg:h-38 lg:absolute lg:top-27 lg:right-178 logo-slide-lab"
         />
       </div>
-      <h2 class="pt-6 sm:pt-8 lg:pt-36 mx-auto lg:ml-64 text-center lg:text-left text-slide-lab">
-        <span class="title1 font-[Antonio] text-[#464b68] block leading-tight tracking-tight">SCALABLE</span>
-        <span class="title2 font-[Antonio] text-[#464b68] block leading-tight tracking-tight">PRODUCTION</span>
+      <h2 class="pt-6 sm:pt-8 lg:pt-36 mx-auto lg:ml-24 text-center lg:text-left">
+        <span class="font-[Antonio] text-[#464b68] block leading-[0.95] tracking-[0.08em] text-[clamp(2.86rem,4.1vw,4.85rem)]">SCALABLE</span>
+        <span class="font-[Antonio] text-[#464b68] block leading-[1.2] tracking-[-0.09em] text-[clamp(4rem,6vw,7.4rem)]">PRODUCTION</span>
       </h2>
-      <p class="desc font-[Montserrat] text-black text-base sm:text-lg md:text-xl 2xl:text-2xl max-w-xs sm:max-w-sm mx-auto lg:mx-0 mt-4 tracking-normal lg:ml-64 text-center lg:text-left text-slide-lab">
+      <p class="font-[Montserrat] text-black max-w-xs sm:max-w-sm mx-auto lg:mx-0 mt-4 tracking-normal lg:ml-24 text-center lg:text-left sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-2xl">
         From pilot runs to <br class="hidden sm:block" />national-scale production
       </p>
     </div>
@@ -28,51 +28,28 @@ import scalableImg from '../assets/3.png';
       <img
         src={scalableImg.src}
         alt="Scalable Production"
-        class="max-w-[180px] sm:max-w-[360px] md:max-w-[340px] lg:max-w-[420px] w-full h-auto drop-shadow-xl mx-auto -mt-6 sm:-mt-10 md:-mt-16 lg:-mt-20"
+        class="drop-shadow-xl w-[200px] sm:w-[300px] lg:w-[480px] h-auto mx-auto -mt-6 sm:-mt-10 md:-mt-16 lg:-mt-20"
       />
     </div>
   </div>
 </section>
 
 <style>
-  .title1, .title2 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    margin-bottom: 0;
-    letter-spacing: normal;
-    line-height: 1.05;
-  }
-  .title1 + .title2 {
-    margin-top: 0;
-  }
-  .desc {
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
-    color: #000;
-    margin-top: 1.5rem;
-    letter-spacing: normal;
-    word-spacing: 0.05em;
-  }
-  @media (min-width: 1441px) {
-    .title1 { font-size: 4.8rem; letter-spacing: -0.05em; }
-    .title2 { font-size: 4.8rem; letter-spacing: -0.03em; }
-    .desc { font-size: 1.5rem; letter-spacing: -0.06em; }
-  }
-  @media (min-width: 1025px) and (max-width: 1296px) {
+  /* Ajustes responsivos para el logo y texto, igual que SlideLab */
+  @media (min-width: 1024px) and (max-width: 1036px) {
     .logo-slide-lab {
       right: 30rem !important;
-      top: 5.75rem !important;
     }
     .text-slide-lab {
       margin-left: 8rem !important;
     }
   }
-
-    @media (min-width: 1297px) and (max-width: 1343px) {
+  @media (min-width: 1037px) and (max-width: 1203px) {
     .logo-slide-lab {
-      right: 45rem !important; /* Menos a la derecha en pantallas medianas */
+      right: 32rem !important;
     }
     .text-slide-lab {
-      margin-left: 8rem !important;
+      margin-left: 90rem !important;
     }
   }
-
 </style>

@@ -3,6 +3,7 @@ import Scaling from './Scaling.astro';
 import SlideLab from './SlideLab.astro';
 import Slide3 from './Slide3.astro';
 import Slide4 from './Slide4.astro';
+import Slide5 from './Slide5.astro';
 import '../styles/global.css';
 ---
 
@@ -20,12 +21,17 @@ import '../styles/global.css';
     <div id="carousel-slide-3" class="w-full h-full flex items-center justify-center hidden">
       <Slide4 />
     </div>
-    <button id="carousel-prev" type="button" class="absolute left-1/2 -translate-x-[120px] bottom-8 text-white text-2xl z-20 bg-black/40 rounded-full px-4 py-2 hover:bg-[#015c9f]/80 transition" aria-label="Anterior">←</button>
-    <button id="carousel-next" type="button" class="absolute left-1/2 translate-x-[120px] bottom-8 text-white text-2xl z-20 bg-black/40 rounded-full px-4 py-2 hover:bg-[#015c9f]/80 transition" aria-label="Siguiente">→</button>
+    <div id="carousel-slide-4" class="w-full h-full flex items-center justify-center hidden">
+      <Slide5 />
+    </div>
+    <div class="absolute left-1/2 -translate-x-1/2 bottom-8 flex gap-6 z-20">
+      <button id="carousel-prev" type="button" class="text-white text-2xl bg-black/40 rounded-full px-4 py-2 hover:bg-[#015c9f]/80 transition" aria-label="Anterior">←</button>
+      <button id="carousel-next" type="button" class="text-white text-2xl bg-black/40 rounded-full px-4 py-2 hover:bg-[#015c9f]/80 transition" aria-label="Siguiente">→</button>
+    </div>
   </div>
   <script is:inline>
     let current = 0;
-    const total = 4;
+    const total = 5;
     function showSlide(idx) {
       for (let i = 0; i < total; i++) {
         document.getElementById(`carousel-slide-${i}`).classList.toggle('hidden', i !== idx);
@@ -40,7 +46,7 @@ import '../styles/global.css';
     };
     setInterval(() => {
       showSlide((current + 1) % total);
-    }, 7000);
+    }, 57000);
     showSlide(current);
   </script>
 </section>

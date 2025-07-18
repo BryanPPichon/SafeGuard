@@ -8,31 +8,18 @@ import '../styles/global.css';
   class="absolute inset-0 w-full h-full bg-gray-50 overflow-hidden pt-16 sm:pt-20 lg:pt-30 pb-16 sm:pb-20 lg:pb-34 flex items-center justify-center"
 >
   <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center">
-    <!-- 4 textos de esquina - responsivos -->
-    <!-- Esquinas responsivas: banda arriba y abajo en móvil, esquinas en desktop -->
-    <!-- Banda inferior móvil: las 4 oraciones en dos filas -->
-    <div class="flex flex-col gap-1 mt-6 sm:hidden">
-      <div class="flex justify-between items-center gap-2 px-2">
-        <span class="corner-item font-montserrat text-black text-xs select-none">R&D Lab, In-House</span>
-        <span class="corner-item font-montserrat text-black text-xs select-none">Scalable Production</span>
-      </div>
-      <div class="flex justify-between items-center gap-2 px-2">
-        <span class="corner-item font-montserrat text-black text-xs select-none">Full Regulatory Compliance</span>
-        <span class="corner-item font-montserrat text-black text-xs select-none">Full Regulatory Compliance</span>
-      </div>
-    </div>
     <!-- Esquinas absolutas en sm+ -->
     <div class="hidden sm:block">
-      <div class="corner-item absolute top-8 left-4 sm:top-12 sm:left-8 lg:top-30 lg:left-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none">
+      <div class="corner-item absolute top-8 left-4 sm:top-12 sm:left-8 lg:top-30 lg:left-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none fix-corner">
         R&D Lab, In-House
       </div>
-      <div class="corner-item absolute top-8 right-4 sm:top-12 sm:right-8 lg:top-30 lg:right-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none">
+      <div class="corner-item absolute top-8 right-4 sm:top-12 sm:right-8 lg:top-30 lg:right-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none fix-corner">
         Scalable Production
       </div>
-      <div class="corner-item absolute bottom-8 left-4 sm:bottom-12 sm:left-8 lg:bottom-30 lg:left-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none">
+      <div class="corner-item absolute bottom-8 left-4 sm:bottom-12 sm:left-8 lg:bottom-30 lg:left-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none fix-corner">
         Full Regulatory Compliance
       </div>
-      <div class="corner-item absolute bottom-8 right-4 sm:bottom-12 sm:right-8 lg:bottom-30 lg:right-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none">
+      <div class="corner-item absolute bottom-8 right-4 sm:bottom-12 sm:right-8 lg:bottom-30 lg:right-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none fix-corner">
         Full Regulatory Compliance
       </div>
     </div>
@@ -41,21 +28,30 @@ import '../styles/global.css';
     <div class="w-full flex flex-col items-center justify-center max-w-4xl mx-auto text-center py-16 sm:py-20 lg:py-30 px-4 sm:px-6 min-h-[300px] h-full">
       <!-- Primera línea: Antonio Bold, responsivo -->
       <h2
-        class="scaling-title text-[#464b68] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[8.5rem] mb-2 pb-0 leading-none tracking-tight tracking-tighter"
-        style="font-family: 'Antonio', sans-serif; font-weight: 300; margin-bottom: 0.2em;"
+        class="scaling-title text-[#464b68] text-[clamp(5rem,7vw,8.4rem)] font-[Antonio] font-normal leading-none mb-2 tracking-tight"
+        style="margin-bottom: 0.2em;"
       >
         BUILT TO SCALE
       </h2>
 
       <!-- Segunda línea: Antonio ExtraLight, responsivo -->
-<h3
-  class="scaling-subtitle text-[#015c9f] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[4.97rem] tracking-[0.02em] mb-6 leading-none"
-  style="font-family: 'Antonio', sans-serif; font-weight: 300;"
->
-  BACKED BY SCIENCE
-</h3>
+      <h3
+        class="scaling-subtitle text-[#015c9f] text-[clamp(2.86rem,4.1vw,4.85rem)] font-[Antonio] font-normal tracking-[0.02em] mb-6 leading-none"
+      >
+        BACKED BY SCIENCE
+      </h3>
 
       <style>
+        /* Fix para evitar encimado de textos esquinados en tablets (768-912px) */
+        @media (min-width: 768px) and (max-width: 912px) {
+          .fix-corner {
+            position: static !important;
+            display: block !important;
+            margin: 0.9rem auto !important;
+            text-align: center !important;
+          
+          }
+        }
         @media (max-width: 400px)  {
           .scaling-title { margin-bottom: 0.4em !important; }
           .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: -0.022em !important; }
@@ -66,21 +62,21 @@ import '../styles/global.css';
         }
         @media (min-width: 771px) and (max-width: 1020px) {
           .scaling-title { margin-bottom: 0.4em !important; }
-         .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: 0.01em !important; }
+         .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: 0.069em !important; }
         }
-        @media (min-width: 1021px) and (max-width: 1024px){
+        @media (min-width: 1021px) and (max-width: 1524px){
           .scaling-title { margin-bottom: 0.3em !important; }
-          .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: -0.001em !important; }
+          .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: 0.067em !important; }
         }
          @media (min-width: 1536px) and (max-width: 2920px)  {
           .scaling-title { margin-bottom: 0.3em !important; }
-          .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: 0.025em !important; }
+          .scaling-subtitle { margin-top: -0.5em !important; letter-spacing: 0.062em !important; }
         }
       </style>
 
 
       <!-- Texto descriptivo: Montserrat, responsivo -->
-      <div class="scaling-text font-montserrat text-sm sm:text-base md:text-lg lg:text-xl text-black max-w-3xl mx-auto">
+      <div class="scaling-text font-montserrat text-black max-w-2xl mx-auto sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-2xl">
         <p class="font-bold text-black leading-none mb-1">
           Formulation, Volume, Compliance
         </p>
@@ -88,6 +84,13 @@ import '../styles/global.css';
           Our turnkey model simplifies your path from concept to shelf,<br>
           delivering speed, quality, and sustainability at every stage.
         </p>
+      </div>
+      <!-- Textos esquinados apilados solo en móvil -->
+      <div class="flex flex-col gap-1 mt-4 sm:hidden">
+        <span class="corner-item font-montserrat text-black text-xs select-none">R&D Lab, In-House</span>
+        <span class="corner-item font-montserrat text-black text-xs select-none">Scalable Production</span>
+        <span class="corner-item font-montserrat text-black text-xs select-none">Full Regulatory Compliance</span>
+        <span class="corner-item font-montserrat text-black text-xs select-none">Full Regulatory Compliance</span>
       </div>
     </div>
   </div>
@@ -139,23 +142,60 @@ import '../styles/global.css';
       ease: 'power2.out'
     }, '-=0.4');
 
-    // Animaciones de hover para elementos de esquina
+    // Animaciones de hover para elementos de esquina (cambio de color y escala)
     document.querySelectorAll('.corner-item').forEach(item => {
       item.addEventListener('mouseenter', () => {
         gsap.to(item, {
           duration: 0.3,
           scale: 1.1,
+          color: '#015c9f',
           ease: 'power2.out'
         });
       });
-
       item.addEventListener('mouseleave', () => {
         gsap.to(item, {
+          duration: 0.3,
+          scale: 1,
+          color: '#000',
+          ease: 'power2.out'
+        });
+      });
+    });
+
+    // Animación de escala para título y subtítulo
+    const title = document.querySelector('.scaling-title');
+    const subtitle = document.querySelector('.scaling-subtitle');
+    if (title) {
+      title.addEventListener('mouseenter', () => {
+        gsap.to(title, {
+          duration: 0.3,
+          scale: 1.08,
+          ease: 'power2.out'
+        });
+      });
+      title.addEventListener('mouseleave', () => {
+        gsap.to(title, {
           duration: 0.3,
           scale: 1,
           ease: 'power2.out'
         });
       });
-    });
+    }
+    if (subtitle) {
+      subtitle.addEventListener('mouseenter', () => {
+        gsap.to(subtitle, {
+          duration: 0.3,
+          scale: 1.08,
+          ease: 'power2.out'
+        });
+      });
+      subtitle.addEventListener('mouseleave', () => {
+        gsap.to(subtitle, {
+          duration: 0.3,
+          scale: 1,
+          ease: 'power2.out'
+        });
+      });
+    }
   });
 </script>

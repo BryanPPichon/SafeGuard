@@ -10,7 +10,7 @@ import '../styles/global.css';
         <div class="flex-shrink-0 flex items-center">
           <div class="mr-3">
             <a href="/">
-              <img src="/src/assets/LOGO.png" alt="Safeguard Laboratories Logo" class="w-60 object-contain pt-6">
+              <img src="/LOGO.png" alt="Safeguard Laboratories Logo" class="w-60 object-contain pt-6">
             </a>
           </div>
         </div>
@@ -19,22 +19,36 @@ import '../styles/global.css';
       <!-- Navigation -->
     <nav class="hidden xl:block">
       <div class="flex items-baseline space-x-13 lg:gap-5">
+        <!-- Categorías principales -->
+        <a href="#home" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+          <span class="relative z-10 text-xl">HOME</span>
+          <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
+        </a>
+        <a href="#manufacturing" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
+          <span class="relative z-10 text-xl">MANUFACTURING</span>
+          <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
+        </a>
         <a href="#why-choose-us" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
-        <span class="relative z-10 text-xl">WHY CHOOSE US</span>
-        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
+          <span class="relative z-10 text-xl">WHY CHOOSE US</span>
+          <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
         </a>
-        <a href="#solutions" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
-        <span class="relative z-10 text-xl">SOLUTIONS</span>
-        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
-        </a>
-        <a href="#from-lab-to-launch" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
-        <span class="relative z-10 text-xl">FROM LAB TO LAUNCH</span>
-        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
-        </a>
-        <a href="#contact" class="header-nav-link text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden ">
-        <span class="relative z-10 text-xl">CONTACT</span>
-        <div class="nav-underline absolute bottom-0 left-0 w-0 h-0.5 bg-[#015c9f] transition-all duration-300"></div>
-        </a>
+        <!-- Dropdown para subcategorías -->
+        <div class="relative" id="desktop-more-group">
+          <button id="desktop-more-btn" type="button" class="header-nav-link flex items-center text-black hover:text-[#015c9f] text-sm font-medium uppercase tracking-wide relative overflow-hidden focus:outline-none">
+            <span class="relative z-10 text-xl">MORE</span>
+            <svg class="ml-1 w-4 h-4 transition-transform" id="desktop-more-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="desktop-more-menu" class="absolute left-0 mt-2 w-48 bg-white rounded shadow-lg opacity-0 pointer-events-none transition-opacity duration-200 z-50">
+            <a href="#capabilities" class="block px-4 py-2 text-black hover:bg-gray-100">CAPABILITIES</a>
+            <a href="#process" class="block px-4 py-2 text-black hover:bg-gray-100">PROCESS</a>
+            <a href="#facility" class="block px-4 py-2 text-black hover:bg-gray-100">FACILITY</a>
+            <a href="#project" class="block px-4 py-2 text-black hover:bg-gray-100">PROJECT</a>
+            <a href="#contact" class="block px-4 py-2 text-black hover:bg-gray-100">CONTACT</a>
+            <a href="#map" class="block px-4 py-2 text-black hover:bg-gray-100">MAP</a>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -54,18 +68,30 @@ import '../styles/global.css';
   <!-- Mobile menu -->
   <div id="mobile-menu" class="xl:hidden hidden">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="#home" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
+        HOME
+      </a>
+      <a href="#manufacturing" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
+        MANUFACTURING
+      </a>
       <a href="#why-choose-us" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
         WHY CHOOSE US
       </a>
-      <a href="#solutions" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
-        SOLUTIONS
-      </a>
-      <a href="#from-lab-to-launch" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
-        FROM LAB TO LAUNCH
-      </a>
-      <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide ">
-        CONTACT
-      </a>
+      <!-- Botón para mostrar subcategorías -->
+      <button id="mobile-more-btn" type="button" class="w-full flex items-center justify-between px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide focus:outline-none">
+        MORE
+        <svg id="mobile-more-icon" class="w-5 h-5 ml-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div id="mobile-more-menu" class="hidden flex-col pl-4">
+        <a href="#capabilities" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">CAPABILITIES</a>
+        <a href="#process" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">PROCESS</a>
+        <a href="#facility" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">FACILITY</a>
+        <a href="#project" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">PROJECT</a>
+        <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">CONTACT</a>
+        <a href="#map" class="mobile-nav-link block px-3 py-2 text-base font-medium text-black hover:text-blue-600 hover:bg-gray-50 uppercase tracking-wide">MAP</a>
+      </div>
     </div>
   </div>
 </header>
@@ -210,13 +236,72 @@ import '../styles/global.css';
     });
   }
 
-</script>
+  // Lógica para el menú "MORE" en mobile
+  const mobileMoreBtn = document.getElementById('mobile-more-btn');
+  const mobileMoreMenu = document.getElementById('mobile-more-menu');
+  const mobileMoreIcon = document.getElementById('mobile-more-icon');
+  let isMoreOpen = false;
 
-<style>
-  header {
-    background-color: rgba(255,255,255,0);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    transition: background-color 0.3s, backdrop-filter 0.3s;
+  if (mobileMoreBtn && mobileMoreMenu && mobileMoreIcon) {
+    mobileMoreBtn.addEventListener('click', () => {
+      isMoreOpen = !isMoreOpen;
+      if (isMoreOpen) {
+        mobileMoreMenu.classList.remove('hidden');
+        mobileMoreIcon.classList.add('rotate-180');
+      } else {
+        mobileMoreMenu.classList.add('hidden');
+        mobileMoreIcon.classList.remove('rotate-180');
+      }
+    });
   }
-</style>
+
+  // Dropdown "MORE" para desktop (abre/cierra con click y cierra al hacer click fuera)
+  const desktopMoreBtn = document.getElementById('desktop-more-btn');
+  const desktopMoreMenu = document.getElementById('desktop-more-menu');
+  const desktopMoreIcon = document.getElementById('desktop-more-icon');
+  const desktopMoreGroup = document.getElementById('desktop-more-group');
+  let isDesktopMoreOpen = false;
+
+  if (desktopMoreBtn && desktopMoreMenu && desktopMoreIcon && desktopMoreGroup) {
+    desktopMoreBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isDesktopMoreOpen = !isDesktopMoreOpen;
+      if (isDesktopMoreOpen) {
+        desktopMoreMenu.classList.remove('opacity-0', 'pointer-events-none');
+        desktopMoreMenu.classList.add('opacity-100', 'pointer-events-auto');
+        desktopMoreIcon.classList.add('rotate-180');
+      } else {
+        desktopMoreMenu.classList.add('opacity-0', 'pointer-events-none');
+        desktopMoreMenu.classList.remove('opacity-100', 'pointer-events-auto');
+        desktopMoreIcon.classList.remove('rotate-180');
+      }
+    });
+
+    // Cerrar al hacer click fuera
+    document.addEventListener('click', (e) => {
+      if (isDesktopMoreOpen && !desktopMoreGroup.contains(e.target as Node)) {
+        isDesktopMoreOpen = false;
+        desktopMoreMenu.classList.add('opacity-0', 'pointer-events-none');
+        desktopMoreMenu.classList.remove('opacity-100', 'pointer-events-auto');
+        desktopMoreIcon.classList.remove('rotate-180');
+      }
+    });
+  }
+
+  // Smooth scroll para enlaces internos del header y menú mobile
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e: Event) {
+      const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+      if (targetId && targetId.length > 1 && document.querySelector(targetId)) {
+        e.preventDefault();
+        const target = document.querySelector(targetId);
+        if (target) {
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.scrollY - 80, // Ajusta el offset si tienes header fijo
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+</script>

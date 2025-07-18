@@ -1,13 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-    theme: {
-        extend: {
-            fontFamily: {
-                'antonio': ['Antonio', 'sans-serif'],
-                'montserrat': ['Montserrat', 'sans-serif'],
-            },
-        },
-    },
-    plugins: [],
+module.exports = {
+  theme: {
+    extend: {
+      scrollMargin: {
+        '60': '60px',
+      }
+    }
+  }
 }

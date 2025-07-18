@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+---
+
+<style>
+  .contact-bg {
+    background-image: url('/src/assets/fondo_contacto.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+  }
+  .contact-content {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+<div class="contact-bg w-full flex flex-col justify-center items-center">
+  <div class="contact-content flex flex-row items-center justify-center w-full h-[calc(100vh-90px)] px-10">
+    <div class="font-[Antonio] flex flex-col justify-center items-center w-1/2 max-w-xl">
+      <div class="text-white font-bold text-4xl md:text-5xl leading-tight mb-2 drop-shadow-lg text-center">
+        GOT A PRODUCT<br>
+        <span class="text-6xl md:text-7xl block mt-2 mb-2 tracking-wide">IN MIND?</span>
+        <span class="text-3xl md:text-4xl font-normal">LET’S MAKE IT REAL.</span>
+      </div>
+    </div>
+    <form class="font-[Montserrat] flex flex-col gap-5 bg-transparent w-1/2 max-w-md items-center">
+      <input type="text" placeholder="Name*" required class="border border-white bg-transparent text-white p-3 rounded focus:outline-none placeholder-white text-lg w-full" />
+      <input type="email" placeholder="Email*" required class="border border-white bg-transparent text-white p-3 rounded focus:outline-none placeholder-white text-lg w-full" />
+      <textarea placeholder="Message" class="border border-white bg-transparent text-white p-3 rounded resize-none min-h-[100px] focus:outline-none placeholder-white text-lg w-full"></textarea>
+      <button type="submit" class="bg-yellow-400 text-gray-900 font-bold py-3 rounded transition duration-200 hover:bg-yellow-300 text-lg tracking-wide border border-yellow-400 shadow-md w-full">SEND MESSAGE</button>
+    </form>
+  </div>
+<div class="bg-cyan-400 text-gray-900 py-4 px-8 w-full absolute bottom-0 left-0 flex flex-row items-center font-semibold justify-center">
+    <span class="text-2xl font-extrabold tracking-wide text-blue-900 mr-6" style="letter-spacing:0.05em;">OUR CONTACT</span>
+    <span class="text-lg font-normal text-left">
+        Address: 12097 Corporate Dr, Dallas, TX 75228<br>
+        Phone: +1 945-425-0807 Email: info@safeguard-labs.com
+    </span>
+</div>
+</div>

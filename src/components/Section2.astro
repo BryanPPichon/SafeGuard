@@ -4,7 +4,7 @@ import backgroundImage from '../assets/fondo.png';
 import '../styles/global.css';
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 sm:pt-40 lg:pt-48">
+<section class="relative flex items-center justify-center overflow-hidden pt-32 sm:pt-40 lg:pt-48 min-h-[100vh]">
   <!-- Imagen de fondo -->
   <div class="absolute inset-0 z-0">
     <img
@@ -20,11 +20,12 @@ import '../styles/global.css';
       
       <!-- Imagen del doctor -->
       <div class="flex justify-center lg:justify-start order-2 lg:order-1">
-        <div class="section2-doctor max-w-md lg:max-w-lg xl:max-w-xl">
+        <div class="max-w-md lg:max-w-lg xl:max-w-xl w-full flex items-end h-full">
           <img
             src={doctorImage.src}
             alt="Professional scientist with arms crossed"
-            class="w-full h-auto object-contain"
+            class="w-full h-full object-contain"
+            style="display: block; margin-top: auto;"
           />
         </div>
       </div>
@@ -32,9 +33,9 @@ import '../styles/global.css';
       <!-- Contenido de texto -->
       <div class="text-center lg:text-left space-y-6 lg:space-y-8 order-1 lg:order-2">
         <div class="section2-title">
-          <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-[Antonio] font-bold text-white leading-tight">
-            <span class="block">TURNKEY LIQUID</span>
-            <span class="block text-cyan-400">MANUFACTURING</span>
+          <h2 class="font-[Antonio] text-[#01ffff] leading-tight">
+            <span class="block text-[clamp(3rem,7vw,6rem)]">TURNKEY LIQUID</span>
+            <span class="block text-[clamp(2.7rem,7vw,5.6rem)]">MANUFACTURING</span>
           </h2>
         </div>
         
@@ -89,9 +90,3 @@ import '../styles/global.css';
     ease: 'power3.out'
   }, '-=0.8');
 </script>
-
-<style>
-  section {
-    background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%);
-  }
-</style>

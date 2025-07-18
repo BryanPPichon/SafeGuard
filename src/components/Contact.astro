@@ -2,6 +2,47 @@
 import '../styles/global.css';
 ---
 
+<script>
+  import gsap from "gsap";
+
+  function animateContact() {
+    gsap.fromTo(".contact-title",
+      { y: -60, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+    );
+    gsap.fromTo(".contact-form",
+      { x: 100, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, delay: 0.5, ease: "power3.out" }
+    );
+    gsap.fromTo(".contact-bar",
+      { y: 60, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, delay: 1, ease: "power3.out" }
+    );
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector('.contact-bg');
+    let animated = false;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateContact();
+            animated = true;
+          } else {
+            // Opcional: reinicia la animación si quieres que se repita cada vez
+            animated = false;
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (section) observer.observe(section);
+  });
+</script>
+
 <style>
   .contact-bg {
     background-image: url('/src/assets/fondo_contacto.png');
@@ -19,24 +60,24 @@ import '../styles/global.css';
 <div class="contact-bg w-full flex flex-col justify-center items-center">
   <div class="contact-content flex flex-col md:flex-row items-center justify-center w-full px-4 md:px-10">
     <div class="font-[Antonio] flex flex-col justify-center items-center w-full md:w-1/2 max-w-xl mb-8 md:mb-0">
-      <div class="text-white text-[clamp(3rem,7.6vw,4rem)] leading-none text-center">
+      <div class="contact-title text-white text-[clamp(3rem,7.6vw,4rem)] leading-none text-center">
         GOT A PRODUCT<br>
         <span class="text-[clamp(4.8rem,12.3vw,6.5rem)] block">IN MIND?</span>
         <span class="text-[clamp(2.25rem,5.7vw,3.05rem)] block">LET’S MAKE IT REAL.</span>
       </div>
     </div>
-    <form class="font-[Montserrat] flex flex-col gap-4 bg-transparent w-[90%] md:w-1/2 max-w-md items-center mt-8 text-white">
+    <form class="contact-form font-[Montserrat] flex flex-col gap-4 bg-transparent w-[90%] md:w-1/2 max-w-md items-center mt-8 text-white">
       <input type="text" placeholder="Name*" required class="border border-white bg-transparent p-2 rounded focus:outline-none placeholder-white text-lg w-full" />
       <input type="email" placeholder="Email*" required class="border border-white bg-transparent p-2 rounded focus:outline-none placeholder-white text-lg w-full" />
       <textarea placeholder="Message" class="border border-white bg-transparent p-2 rounded resize-none min-h-[150px] focus:outline-none placeholder-white text-lg w-full"></textarea>
-      <button type="submit" class="font-[Antonio] bg-[#ffba00] text-black py-3 rounded hover:bg-[#daa300] w-[70%] font-bold sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl">SEND MESSAGE</button>
+      <button type="submit" class="font-[Antonio] bg-[#ffba00] text-black py-3 rounded hover:bg-[#daa300] w-[70%] font-bold sm:text-sm md:text-lg lg:text-xl xl:text-2xl">SEND MESSAGE</button>
     </form>
   </div>
-<div class="bg-[#01ffff] py-4 px-2 md:px-8 w-full absolute bottom-0 left-0 flex flex-col md:flex-row items-center font-semibold justify-center gap-2 md:gap-0">
-  <span class="font-[Antonio] text-2xl md:text-4xl font-extrabold text-[#015c9f] md:mr-10 text-center md:text-left">OUR CONTACT</span>
-  <span class="font-[Montserrat] text-xs md:text-lg font-normal text-center md:text-left">
-    Address: 12097 Corporate Dr, Dallas, TX 75228<br>
-    Phone: +1 945-425-0807 Email: info@safeguard-labs.com
-  </span>
-</div>
+  <div class="contact-bar bg-[#01ffff] py-4 px-2 md:px-8 w-full absolute bottom-0 left-0 flex flex-col md:flex-row items-center font-semibold justify-center gap-2 md:gap-0">
+    <span class="font-[Antonio] text-2xl md:text-4xl font-extrabold text-[#015c9f] md:mr-10 text-center md:text-left">OUR CONTACT</span>
+    <span class="font-[Montserrat] text-xs md:text-lg font-normal text-center md:text-left">
+      Address: 12097 Corporate Dr, Dallas, TX 75228<br>
+      Phone: +1 945-425-0807 Email: info@safeguard-labs.com
+    </span>
+  </div>
 </div>

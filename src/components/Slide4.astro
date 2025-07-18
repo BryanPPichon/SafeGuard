@@ -1,0 +1,69 @@
+---
+import logoIcon from '../assets/icono_logo.png';
+import awardImg from '../assets/4.png';
+---
+
+<section class="relative w-full min-h-[100vh] flex items-center justify-center bg-[#f7f7f8] px-4 sm:px-8 lg:px-12 py-10 sm:py-16 overflow-hidden">
+  <div class="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-8 lg:gap-12">
+    <!-- Columna izquierda: logo + texto -->
+    <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left p-6 pt-0 lg:pt-9">
+      <!-- Logo: en flujo normal en móvil/tablet, absolute en escritorio -->
+      <div class="flex justify-center lg:block w-full lg:w-auto mb-2 lg:mb-0">
+        <img
+          src={logoIcon.src}
+          alt="Logo"
+          class="w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 lg:absolute lg:top-34 lg:right-157 logo-slide-lab"
+        />
+      </div>
+      <h2 class="pt-6 sm:pt-8 lg:pt-36 mx-auto lg:ml-32 text-center lg:text-left text-slide-lab">
+        <span class="title1 font-[Antonio] text-[#464b68] block leading-tight tracking-tight">FULL REGULATORY</span>
+        <span class="title2 font-[Antonio] text-[#464b68] block leading-tight tracking-tight">COMPLIANCE</span>
+      </h2>
+      <p class="desc font-[Montserrat] text-black text-base sm:text-lg md:text-xl 2xl:text-2xl max-w-xs sm:max-w-sm mx-auto lg:mx-0 mt-4 tracking-normal lg:ml-32 text-center lg:text-left text-slide-lab">
+        US FDA MoCRA & EPA<br class="hidden sm:block" />Registered Facility
+      </p>
+    </div>
+    <!-- Columna derecha: imagen -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center mb-16 lg:mb-8">
+      <img
+        src={awardImg.src}
+        alt="Certified Facility"
+        class="max-w-[200px] sm:max-w-[380px] md:max-w-[360px] lg:max-w-[440px] w-full h-auto drop-shadow-xl mx-auto"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .title1, .title2 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 0;
+    letter-spacing: normal;
+    line-height: 1.05;
+  }
+  .title1 + .title2 {
+    margin-top: 0;
+  }
+  .desc {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: #000;
+    margin-top: 1.5rem;
+    letter-spacing: normal;
+    word-spacing: 0.05em;
+  }
+  @media (min-width: 1441px) {
+    .title1 { font-size: 4.8rem; letter-spacing: -0.03em; }
+    .title2 { font-size: 4.8rem; letter-spacing: -0.03em; }
+    .desc { font-size: 1.5rem; letter-spacing: -0.06em; }
+  }
+  @media (min-width: 1024px) and (max-width: 1343px) {
+    .logo-slide-lab {
+      right: 40rem !important;
+      top: 5.75rem !important;
+    }
+    .text-slide-lab {
+      margin-left: 4rem !important;
+    }
+  }
+
+</style>

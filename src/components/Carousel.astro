@@ -1,0 +1,46 @@
+---
+import Scaling from './Scaling.astro';
+import SlideLab from './SlideLab.astro';
+import Slide3 from './Slide3.astro';
+import Slide4 from './Slide4.astro';
+import '../styles/global.css';
+---
+
+<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="w-full h-full flex items-center justify-center">
+    <div id="carousel-slide-0" class="w-full h-full flex items-center justify-center">
+      <Scaling />
+    </div>
+    <div id="carousel-slide-1" class="w-full h-full flex items-center justify-center hidden">
+      <SlideLab />
+    </div>
+    <div id="carousel-slide-2" class="w-full h-full flex items-center justify-center hidden">
+      <Slide3 />
+    </div>
+    <div id="carousel-slide-3" class="w-full h-full flex items-center justify-center hidden">
+      <Slide4 />
+    </div>
+    <button id="carousel-prev" type="button" class="absolute left-1/2 -translate-x-[120px] bottom-8 text-white text-2xl z-20 bg-black/40 rounded-full px-4 py-2 hover:bg-[#015c9f]/80 transition" aria-label="Anterior">←</button>
+    <button id="carousel-next" type="button" class="absolute left-1/2 translate-x-[120px] bottom-8 text-white text-2xl z-20 bg-black/40 rounded-full px-4 py-2 hover:bg-[#015c9f]/80 transition" aria-label="Siguiente">→</button>
+  </div>
+  <script is:inline>
+    let current = 0;
+    const total = 4;
+    function showSlide(idx) {
+      for (let i = 0; i < total; i++) {
+        document.getElementById(`carousel-slide-${i}`).classList.toggle('hidden', i !== idx);
+      }
+      current = idx;
+    }
+    document.getElementById('carousel-prev').onclick = function() {
+      showSlide((current - 1 + total) % total);
+    };
+    document.getElementById('carousel-next').onclick = function() {
+      showSlide((current + 1) % total);
+    };
+    setInterval(() => {
+      showSlide((current + 1) % total);
+    }, 7000);
+    showSlide(current);
+  </script>
+</section>

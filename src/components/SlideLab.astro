@@ -5,9 +5,8 @@ import microscopeImg from '../assets/2.png';
 
 <section class="relative w-full min-h-[100vh] flex items-center justify-center bg-[#f7f7f8] px-4 sm:px-8 lg:px-12 py-10 sm:py-16 overflow-hidden">
   <div class="relative z-10 flex flex-col-reverse lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-8 lg:gap-12">
-    <!-- Columna izquierda: logo + texto -->
     <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left p-6 pt-0 lg:pt-9">
-      <!-- Logo: en flujo normal en móvil/tablet, absolute en escritorio -->
+
       <div class="flex justify-center lg:block w-full lg:w-auto mb-2 lg:mb-0">
         <img
           src={logoIcon.src}
@@ -16,8 +15,6 @@ import microscopeImg from '../assets/2.png';
         />
       </div>
       <h2 class="pt-6 sm:pt-8 lg:pt-36 mx-auto lg:ml-24 text-center lg:text-left">
-        <!-- Puedes ajustar el espaciado entre letras con tracking-*, por ejemplo tracking-normal, tracking-tight, tracking-wider, etc. -->
-        <!-- Puedes ajustar el espaciado entre renglones con leading-*, por ejemplo leading-tight, leading-snug, leading-normal, etc. -->
         <span class="font-[Antonio] text-[#464b68] block leading-[0.95] tracking-[-0.08em] text-[clamp(5rem,7vw,8.4rem)]">R&amp;D LAB,</span>
         <span class="font-[Antonio] text-[#464b68] block leading-[1.2] tracking-[0.08em] text-[clamp(2.86rem,4.1vw,4.85rem)]">IN-HOUSE</span>
       </h2>
@@ -25,7 +22,6 @@ import microscopeImg from '../assets/2.png';
         Custom formulas backed by <br class="hidden sm:block" />science and experience
       </p>
     </div>
-    <!-- Columna derecha: imagen -->
     <div class="w-full lg:w-1/2 flex items-center justify-center mb-8 lg:mb-0">
       <img
         src={microscopeImg.src}
@@ -37,10 +33,10 @@ import microscopeImg from '../assets/2.png';
 </section>
 
 <style>
-  /* Eliminados estilos de tamaño de fuente, ahora se usan utilidades Tailwind y clamp en línea */
+  
   @media (min-width: 1024px) and (max-width: 1036px) {
     .logo-slide-lab {
-      right: 30rem !important; /* Menos a la derecha en pantallas medianas */
+      right: 30rem !important; 
     }
     .text-slide-lab {
       margin-left: 8rem !important;
@@ -49,10 +45,27 @@ import microscopeImg from '../assets/2.png';
 
   @media (min-width: 1037px) and (max-width: 1203px) {
     .logo-slide-lab {
-      right:32rem !important; /* Menos a la derecha en pantallas medianas */
+      right:32rem !important; 
     }
     .text-slide-lab {
       margin-left: 8rem !important;
     }
   }
-</style>
+ </style>
+
+<script type="module">
+  import { gsap } from 'https://cdn.skypack.dev/gsap';
+  window.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.logo-slide-lab');
+    const title1 = document.querySelector('h2 span:first-child');
+    const title2 = document.querySelector('h2 span:last-child');
+    const desc = document.querySelector('p');
+    const img = document.querySelector('img[alt="Microscopio"]');
+    const tl = gsap.timeline({ defaults: { duration: 1.2, ease: 'power2.out' } });
+    if (logo) tl.from(logo, { x: -80, opacity: 0 }, 0);
+    if (title1) tl.from(title1, { x: -60, opacity: 0 }, 0.1);
+    if (title2) tl.from(title2, { x: -40, opacity: 0 }, 0.2);
+    if (desc) tl.from(desc, { x: -20, opacity: 0 }, 0.3);
+    if (img) tl.from(img, { x: 80, opacity: 0 }, 0.2);
+  });
+</script>

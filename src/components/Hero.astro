@@ -46,13 +46,22 @@ import '../styles/global.css';
 
 <script>
   import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
 
   if (typeof window !== "undefined") {
-    document.addEventListener('DOMContentLoaded', () => {
-      const tl = gsap.timeline();
+    // Usar ScrollTrigger para que la animación se repita cada vez que el Hero entra al viewport
+    const heroTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#home",
+        start: "top 80%",
+        toggleActions: "restart none restart none", // Animación al entrar desde arriba y abajo
+      }
+    });
 
-      // Logos de las esquinas
-      tl.from('.hero-corner-left', {
+    heroTimeline
+      .from('.hero-corner-left', {
         x: -80,
         opacity: 0,
         duration: 0.8,
@@ -63,46 +72,35 @@ import '../styles/global.css';
         opacity: 0,
         duration: 0.8,
         ease: 'power2.out'
-      }, '-=0.7');
-
-      // Título principal
-      tl.from('.hero-title', {
+      }, '-=0.7')
+      .from('.hero-title', {
         y: 60,
         opacity: 0,
         duration: 0.8,
         ease: 'power3.out'
-      }, '-=0.5');
-
-      // Subtítulo
-      tl.from('.hero-subtitle', {
+      }, '-=0.5')
+      .from('.hero-subtitle', {
         y: 40,
         opacity: 0,
         duration: 0.7,
         ease: 'power3.out'
-      }, '-=0.6');
-
-      // Descripción
-      tl.from('.hero-desc', {
+      }, '-=0.6')
+      .from('.hero-desc', {
         y: 30,
         opacity: 0,
         duration: 0.6,
         ease: 'power2.out'
-      }, '-=0.5');
-
-      // Botón
-      tl.fromTo('.hero-btn',
+      }, '-=0.5')
+      .fromTo('.hero-btn',
         { scale: 0.8, opacity: 0 },
         { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.7)' },
         '-=0.4'
-      );
-
-      // Imagen del frasco
-      tl.from('.hero-bottle', {
+      )
+      .from('.hero-bottle', {
         x: 80,
         opacity: 0,
         duration: 1,
         ease: 'power2.out'
       }, '-=0.7');
-    });
   }
 </script>

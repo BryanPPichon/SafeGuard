@@ -28,11 +28,11 @@ import '../styles/global.css';
       <span class="sr-only">Navegación de slides</span>
       {Array.from({length: 5}).map((_, idx) => (
         <button
-          class="w-6 h-6 rounded-full border-4 border-[#01ffff] bg-white shadow-lg flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#01ffff]/40 hover:scale-110"
+          class="w-5 h-5 rounded-full bg-transparent flex items-center justify-center transition-all duration-200 focus:outline-none hover:scale-110"
           data-idx={idx}
           aria-label={`Ir al slide ${idx+1}`}
         >
-          <span class="block w-3.5 h-3.5 rounded-full transition-all duration-300 bg-[#e0e0e0]" data-dot-inner></span>
+          <span class="block w-3 h-3 rounded-full transition-all duration-200 bg-[#e0e0e0]" data-dot-inner></span>
         </button>
       ))}
     </div>
@@ -61,15 +61,15 @@ import '../styles/global.css';
       dots.forEach((dot, i) => {
         const inner = dot.querySelector('[data-dot-inner]');
         if (i === idx) {
-          dot.classList.add('ring-2', 'ring-[#01ffff]', 'scale-110');
+          dot.classList.add('scale-110');
           if(inner) {
             inner.classList.remove('bg-[#e0e0e0]');
-            inner.classList.add('bg-[#01ffff]', 'shadow-md');
+            inner.classList.add('bg-[#01bcd4]');
           }
         } else {
-          dot.classList.remove('ring-2', 'ring-[#01ffff]', 'scale-110');
+          dot.classList.remove('scale-110');
           if(inner) {
-            inner.classList.remove('bg-[#01ffff]', 'shadow-md');
+            inner.classList.remove('bg-[#01bcd4]');
             inner.classList.add('bg-[#e0e0e0]');
           }
         }

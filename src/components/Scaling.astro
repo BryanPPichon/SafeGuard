@@ -1,5 +1,5 @@
 ---
-// src/components/Scaling.astro
+
 import '../styles/global.css';
 ---
 
@@ -8,7 +8,7 @@ import '../styles/global.css';
   class="absolute inset-0 w-full h-full bg-gray-50 overflow-hidden pt-16 sm:pt-20 lg:pt-30 pb-16 sm:pb-20 lg:pb-34 flex items-center justify-center"
 >
   <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center">
-    <!-- Esquinas absolutas en sm+ -->
+   
     <div class="hidden sm:block">
       <div class="corner-item absolute top-8 left-4 sm:top-12 sm:left-8 lg:top-30 lg:left-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none fix-corner">
         R&D Lab, In-House
@@ -20,13 +20,12 @@ import '../styles/global.css';
         Full Regulatory Compliance
       </div>
       <div class="corner-item absolute bottom-8 right-4 sm:bottom-12 sm:right-8 lg:bottom-30 lg:right-1/4 font-montserrat text-black text-base md:text-lg lg:text-xl select-none fix-corner">
-        Full Regulatory Compliance
+        Ethical Manufacturing
       </div>
     </div>
 
-    <!-- Bloque central -->
     <div class="w-full flex flex-col items-center justify-center max-w-4xl mx-auto text-center py-16 sm:py-20 lg:py-30 px-4 sm:px-6 min-h-[300px] h-full">
-      <!-- Primera línea: Antonio Bold, responsivo -->
+     
       <h2
         class="scaling-title text-[#464b68] text-[clamp(5rem,7vw,8.4rem)] font-[Antonio] font-normal leading-none mb-2 tracking-tight"
         style="margin-bottom: 0.2em;"
@@ -34,7 +33,7 @@ import '../styles/global.css';
         BUILT TO SCALE
       </h2>
 
-      <!-- Segunda línea: Antonio ExtraLight, responsivo -->
+     
       <h3
         class="scaling-subtitle text-[#015c9f] text-[clamp(2.86rem,4.1vw,4.85rem)] font-[Antonio] font-normal tracking-[0.02em] mb-6 leading-none"
       >
@@ -42,7 +41,7 @@ import '../styles/global.css';
       </h3>
 
       <style>
-        /* Fix para evitar encimado de textos esquinados en tablets (768-912px) */
+        
         @media (min-width: 768px) and (max-width: 912px) {
           .fix-corner {
             position: static !important;
@@ -75,17 +74,17 @@ import '../styles/global.css';
       </style>
 
 
-      <!-- Texto descriptivo: Montserrat, responsivo -->
+     
       <div class="scaling-text font-montserrat text-black max-w-2xl mx-auto sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-2xl">
         <p class="font-bold text-black leading-none mb-1">
           Formulation, Volume, Compliance
         </p>
         <p class="text-black leading-none mt-0 ">
           Our turnkey model simplifies your path from concept to shelf,<br>
-          delivering speed, quality, and sustainability at every stage.
+          delivering speed, quality, and sustainability at every stage
         </p>
       </div>
-      <!-- Textos esquinados apilados solo en móvil -->
+     
       <div class="flex flex-col gap-1 mt-4 sm:hidden">
         <span class="corner-item font-montserrat text-black text-xs select-none">R&D Lab, In-House</span>
         <span class="corner-item font-montserrat text-black text-xs select-none">Scalable Production</span>
@@ -102,47 +101,32 @@ import '../styles/global.css';
   gsap.registerPlugin(ScrollTrigger);
 
   document.addEventListener('DOMContentLoaded', () => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#why-choose-us',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        // al entrar y al volver atrás, repite la animación
-        toggleActions: 'play none play none',
-      }
-    });
+    function playScalingAnimation() {
+      const tl = gsap.timeline();
+      tl.fromTo('.corner-item', {y: 20, opacity: 0}, {y: 0, opacity: 1, duration: 0.6, stagger: 0.2, ease: 'power2.out'})
+        .fromTo('.scaling-title', {y: 50, opacity: 0}, {y: 0, opacity: 1, duration: 0.8, ease: 'power2.out'}, '-=0.4')
+        .fromTo('.scaling-subtitle', {y: 30, opacity: 0}, {y: 0, opacity: 1, duration: 0.6, ease: 'power2.out'}, '-=0.5')
+        .fromTo('.scaling-text', {y: 20, opacity: 0}, {y: 0, opacity: 1, duration: 0.6, ease: 'power2.out'}, '-=0.4');
+    }
 
-    // 1) Esquinas
-    tl.from('.corner-item', {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: 'power2.out'
-    })
-    // 2) Título principal
-    .from('.scaling-title', {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power2.out'
-    }, '-=0.4')
-    // 3) Subtítulo
-    .from('.scaling-subtitle', {
-      y: 30,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power2.out'
-    }, '-=0.5')
-    // 4) Texto descriptivo
-    .from('.scaling-text', {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power2.out'
-    }, '-=0.4');
+    
+    const section = document.getElementById('why-choose-us');
+    let lastVisible = false;
+    if (section) {
+      const observer = new window.IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !lastVisible) {
+            playScalingAnimation();
+            lastVisible = true;
+          } else if (!entry.isIntersecting) {
+            lastVisible = false;
+          }
+        });
+      }, { threshold: 0.4 });
+      observer.observe(section);
+    }
 
-    // Animaciones de hover para elementos de esquina (cambio de color y escala)
+
     document.querySelectorAll('.corner-item').forEach(item => {
       item.addEventListener('mouseenter', () => {
         gsap.to(item, {
@@ -162,7 +146,7 @@ import '../styles/global.css';
       });
     });
 
-    // Animación de escala para título y subtítulo
+
     const title = document.querySelector('.scaling-title');
     const subtitle = document.querySelector('.scaling-subtitle');
     if (title) {

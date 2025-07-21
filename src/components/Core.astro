@@ -3,13 +3,13 @@ import '../styles/global.css';
 ---
 
 <section
-  id="capabilities"
+  id="core-capabilities"
   class="relative overflow-hidden pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16"
   style="background: url('/10_fondo.png') no-repeat center center; background-size: cover; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;"
 >
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <!-- Título principal -->
+   
     <div class="text-center mb-3 sm:mb-4 lg:mb-5">
       <h2
         class="core-title font-[Antonio] text-[#01ffff] font-light leading-none mb-0 text-[clamp(3.5rem,7vw,9.5rem)] tracking-[-0.01em]"
@@ -22,22 +22,22 @@ import '../styles/global.css';
         CAPABILITIES
       </h3>
       <style>
-        /* Celular */
+       
         @media (max-width: 400px) {
-          .core-title { font-size: 2.5rem !important; margin-bottom: 0.6em !important; letter-spacing: 0.05em !important; }
-          .core-subtitle { font-size: 1.1rem !important; margin-top: -1.2em !important; letter-spacing: -0.01em !important; }
+          .core-title { font-size: 6.5rem !important; margin-bottom: 0em !important; letter-spacing: 0.05em !important; }
+          .core-subtitle { font-size: 3.1rem !important; margin-top: 0em !important; letter-spacing: -0.05em !important; }
         }
-        /* Tablet */
+        
         @media (min-width: 401px) and (max-width: 900px) {
-          .core-title { font-size: 3.5rem !important; margin-bottom: 0.6em !important; letter-spacing: 0.05em !important; }
-          .core-subtitle { font-size: 1.5rem !important; margin-top: -1.2em !important; letter-spacing: -0.01em !important; }
+          .core-title { font-size: 6.5rem !important; margin-bottom: 0.6em !important; letter-spacing: 0.08em !important; }
+          .core-subtitle { font-size: 3.8rem !important; margin-top: -1em !important; letter-spacing: -0.08em !important; }
         }
-        /* PC estándar */
+      
         @media (min-width: 901px) and (max-width: 1400px) {
           .core-title { font-size: 5.5rem !important; margin-bottom: 0.8em !important; letter-spacing: 0.02em !important; }
           .core-subtitle { font-size: 2.2rem !important; margin-top: -1.90em !important; letter-spacing: -0.009em !important; }
         }
-        /* Monitores grandes */
+        
         @media (min-width: 1401px) {
           .core-title { font-size: 9.5rem !important; margin-bottom: 0.7em !important; letter-spacing: -0.02em !important; }
           .core-subtitle { font-size: 3.2rem !important; margin-top: -1.90em !important; letter-spacing: 0.01em !important; }
@@ -45,56 +45,52 @@ import '../styles/global.css';
       </style>
     </div>
 
-    <!-- Texto descriptivo -->
+    
     <div class="text-center mb-6 sm:mb-8 lg:mb-10 max-w-4xl 2xl:max-w-6xl mx-auto">
       <p class="core-text font-montserrat font-light text-[20px] text-white leading-tight mb-3" style="letter-spacing: 0.02em;">
-        We provide full-spectrum liquid manufacturing services that adapt <br> to your needs and scale with your growth.
+        We provide full-spectrum liquid manufacturing services that adapt <br> to your needs and scale with your growth
       </p>
       <p class="core-text-bold font-montserrat font-light text-[20px] text-white leading-tight" style="letter-spacing: 0.02em;">
-        Our integrated capabilities reduce complexity and <br><span class="font-bold">accelerate your go-to-market timeline.</span>
+        Our integrated capabilities reduce complexity and <br><span class="font-bold">accelerate your go-to-market timeline</span>
       </p>
     </div>
 
-<!-- Hexágonos -->
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-4 sm:mb-5 md:mb-6">
-  <!-- Hexágono 1 -->
+
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-14 sm:gap-16 md:gap-20 mb-2 sm:mb-3 md:mb-4">
+
   <div class="hexagon-item flex flex-col items-center group">
-    <div class="hexagon-shape relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52
-                bg-white group-hover:bg-[#01ffff] transition-all duration-300
-                cursor-pointer group-hover:scale-110 hexagon-glow rounded-hexagon
-                flex items-center justify-center">
-      <div class="text-center px-2 py-2 w-full">
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-1" style="font-family: 'Antonio', sans-serif;">
+    <div class="hexagon-bg relative flex items-center justify-center group-hover:scale-90 transition-transform duration-300">
+      <div class="hexagon-overlay pointer-events-none"></div>
+      <div class="absolute w-full h-full flex flex-col items-center justify-center px-2 py-2 z-10">
+        <div class="hex-title leading-none mb-1" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           TURNKEY
         </div>
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-2" style="font-family: 'Antonio', sans-serif;">
+        <div class="hex-title leading-none mb-2" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           MANUFACTURING
         </div>
-        <div class="text-[10px] sm:text-xs text-black leading-tight" style="font-family: 'Montserrat', sans-serif;">
+        <div class="text-[10px] sm:text-xs text-black leading-tight text-center" style="font-family: 'Montserrat', sans-serif;">
           End-to-end service<br>
           From R&D to packaging
         </div>
       </div>
     </div>
   </div>
-
   <!-- Hexágono 2 -->
   <div class="hexagon-item flex flex-col items-center group">
-    <div class="hexagon-shape relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52
-                bg-white group-hover:bg-[#01ffff] transition-all duration-300
-                cursor-pointer group-hover:scale-110 hexagon-glow rounded-hexagon
-                flex items-center justify-center">
-      <div class="text-center px-2 py-2 w-full">
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-1" style="font-family: 'Antonio', sans-serif;">
+    <div class="hexagon-bg relative flex items-center justify-center group-hover:scale-90 transition-transform duration-300">
+      <div class="hexagon-overlay pointer-events-none"></div>
+      <div class="absolute w-full h-full flex flex-col items-center justify-center px-2 py-2 z-10">
+        <div class="hex-title leading-none mb-1" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           CUSTOM
         </div>
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-1" style="font-family: 'Antonio', sans-serif;">
+        <div class="hex-title leading-none mb-1" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           FORMULATION
         </div>
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-2" style="font-family: 'Antonio', sans-serif;">
+        <div class="hex-title leading-none mb-2" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           & TESTING
         </div>
-        <div class="text-[10px] sm:text-xs text-black leading-tight" style="font-family: 'Montserrat', sans-serif;">
+        <div class="text-[10px] sm:text-xs text-black leading-tight text-center" style="font-family: 'Montserrat', sans-serif;">
           In-house chemists and lab<br>
           support for product<br>
           development
@@ -102,24 +98,21 @@ import '../styles/global.css';
       </div>
     </div>
   </div>
-
   <!-- Hexágono 3 -->
   <div class="hexagon-item flex flex-col items-center group">
-    <div class="hexagon-shape relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52
-                bg-white group-hover:bg-[#01ffff] transition-all duration-300
-                cursor-pointer group-hover:scale-110 hexagon-glow rounded-hexagon
-                flex items-center justify-center">
-      <div class="text-center px-2 py-2 w-full">
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-1" style="font-family: 'Antonio', sans-serif;">
+    <div class="hexagon-bg relative flex items-center justify-center group-hover:scale-90 transition-transform duration-300">
+      <div class="hexagon-overlay pointer-events-none"></div>
+      <div class="absolute w-full h-full flex flex-col items-center justify-center px-2 py-2 z-10">
+        <div class="hex-title leading-none mb-1" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           PRECISION
         </div>
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-1" style="font-family: 'Antonio', sans-serif;">
+        <div class="hex-title leading-none mb-1" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           BLENDING &
         </div>
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-2" style="font-family: 'Antonio', sans-serif;">
+        <div class="hex-title leading-none mb-2" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           FILLING
         </div>
-        <div class="text-[10px] sm:text-xs text-black leading-tight" style="font-family: 'Montserrat', sans-serif;">
+        <div class="text-[10px] sm:text-xs text-black leading-tight text-center" style="font-family: 'Montserrat', sans-serif;">
           Flexible formats from 1mL<br>
           to 1 gallon with strict QC<br>
           standards
@@ -127,24 +120,21 @@ import '../styles/global.css';
       </div>
     </div>
   </div>
-
   <!-- Hexágono 4 -->
   <div class="hexagon-item flex flex-col items-center group">
-    <div class="hexagon-shape relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52
-                bg-white group-hover:bg-[#01ffff] transition-all duration-300
-                cursor-pointer group-hover:scale-110 hexagon-glow rounded-hexagon
-                flex items-center justify-center">
-      <div class="text-center px-2 py-2 w-full">
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-1" style="font-family: 'Antonio', sans-serif;">
+    <div class="hexagon-bg relative flex items-center justify-center group-hover:scale-90 transition-transform duration-300">
+      <div class="hexagon-overlay pointer-events-none"></div>
+      <div class="absolute w-full h-full flex flex-col items-center justify-center px-2 py-2 z-10">
+        <div class="hex-title leading-none mb-1" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           PACKAGING
         </div>
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-1" style="font-family: 'Antonio', sans-serif;">
+        <div class="hex-title leading-none mb-1" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           & BRANDING
         </div>
-        <div class="text-xs sm:text-base lg:text-lg text-black leading-none mb-2" style="font-family: 'Antonio', sans-serif;">
+        <div class="hex-title leading-none mb-2" style="font-family: 'Antonio', sans-serif; color: #464b68;">
           SOLUTIONS
         </div>
-        <div class="text-[10px] sm:text-xs text-black leading-tight" style="font-family: 'Montserrat', sans-serif;">
+        <div class="text-[10px] sm:text-xs text-black leading-tight text-center" style="font-family: 'Montserrat', sans-serif;">
           Compliant, shelf-ready,<br>
           and customized for your<br>
           brand
@@ -153,10 +143,9 @@ import '../styles/global.css';
     </div>
   </div>
 </div>
-```
 
 
-    <!-- Botón -->
+    
     <div class="text-center mt-10 sm:mt-12">
       <a href="#contact" class="inline-block hero-btn-link">
         <button class="bg-[#ffba00] hover:bg-[#daa300] text-black font-[Antonio] font-bold sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl px-8 py-3 rounded-md shadow-lg transition-all duration-200 border-none outline-none hero-btn w-full sm:w-auto">
@@ -168,78 +157,8 @@ import '../styles/global.css';
 </section>
 
 <style>
-  .rounded-hexagon {
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    border-radius: 50px;
-  }
 
-  .hexagon-glow {
-    box-shadow: 
-      0 0 10px rgba(1, 255, 255, 0.3),
-      0 0 20px rgba(1, 255, 255, 0.2),
-      0 0 30px rgba(1, 255, 255, 0.1),
-      inset 0 0 10px rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(1, 255, 255, 0.4);
-    animation: glow-pulse 3s ease-in-out infinite;
-  }
 
-  .hexagon-glow:hover {
-    box-shadow: 
-      0 0 20px rgba(1, 255, 255, 0.6),
-      0 0 40px rgba(1, 255, 255, 0.4),
-      0 0 60px rgba(1, 255, 255, 0.3),
-      0 0 80px rgba(1, 255, 255, 0.2),
-      inset 0 0 20px rgba(1, 255, 255, 0.3);
-    border: 2px solid rgba(1, 255, 255, 0.8);
-  }
-
-  /* Animación de pulso luminoso */
-  @keyframes glow-pulse {
-    0%, 100% {
-      box-shadow: 
-        0 0 10px rgba(1, 255, 255, 0.3),
-        0 0 20px rgba(1, 255, 255, 0.2),
-        0 0 30px rgba(1, 255, 255, 0.1);
-    }
-    50% {
-      box-shadow: 
-        0 0 15px rgba(1, 255, 255, 0.5),
-        0 0 30px rgba(1, 255, 255, 0.3),
-        0 0 45px rgba(1, 255, 255, 0.2);
-    }
-  }
-
-  /* Asegurar que el efecto hover funcione */
-  .group:hover .hexagon-shape {
-    background-color: #01ffff !important;
-  }
-
-  /* Asegurar que el texto se mantenga negro */
-  .hexagon-shape .text-black {
-    color: #000000 !important;
-  }
-  
-
-  .group:hover .hexagon-shape .text-black {
-    color: #000000 !important;
-  }
-.hexagon-shape {
-  position: relative; /* asegúrate de tener esto */
-  z-index: 1;
-}
-
-.hexagon-shape::before {
-  content: "";
-  position: absolute;
-  /* ampliamos un poco el área para que el borde se vea */
-  top: -4px; left: -4px; right: -4px; bottom: -4px;
-  clip-path: inherit;            /* mantiene la forma hexagonal */
-  border: 4px solid rgba(1,255,255,0.8);
-  filter: blur(4px);             /* difumina ese borde */
-  z-index: -1;                   /* queda detrás del hexágono */
-}
-
-  /* Estilos específicos para el botón */
   .core-start-btn,
   #core-start-button {
     background: #eab308 !important;
@@ -276,12 +195,41 @@ import '../styles/global.css';
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
   }
 
-@media (max-width: 640px) {
-  .hexagon-shape {
-    width: 11.5rem !important; /* w-46 */
-    height: 11.5rem !important; /* h-46 */
+/* Eliminadas reglas que modifican el tamaño de los hexágonos en móviles. */
+  .hexagon-bg {
+    width: 20rem;
+    height: 20rem;
+    background-image: url('/src/assets/9_hexagono.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* border-radius: 2.5rem; */
+    position: relative;
+    transition: background-image 0.3s;
+    box-shadow: none;
+    overflow: visible;
   }
-}
+  .hex-title {
+    font-size: 1.7rem;
+    font-weight: 400;
+    transition: font-size 0.3s;
+    line-height: 1.1;
+  }
+  .group:hover .hex-title {
+    font-size: 2.5rem;
+  }
+  .group:hover .hexagon-bg {
+    background-image: url('/src/assets/9_hexagonoGris.png');
+    filter: none;
+    box-shadow: none;
+  }
+  .hexagon-overlay {
+    display: none;
+  }
+  .group:hover .hexagon-bg {
+ 
+  }
+  /* Eliminada la regla que reducía el tamaño a 11.5rem en móviles */
 </style>
 
 <script>
@@ -290,55 +238,95 @@ import '../styles/global.css';
   gsap.registerPlugin(ScrollTrigger);
 
   document.addEventListener('DOMContentLoaded', () => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#core-capabilities',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        toggleActions: 'play none play none',
-      }
+    /** @type {gsap.core.Timeline | null} */
+    let tl: gsap.core.Timeline | null = null;
+    ScrollTrigger.create({
+      trigger: '#core-capabilities',
+      start: 'top 80%',
+      end: 'bottom 20%',
+      onEnter: () => {
+        if (tl) tl.kill();
+        tl = gsap.timeline();
+        tl.from('.core-title', {
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out'
+        })
+        .from('.core-subtitle', {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out'
+        }, '-=0.4')
+        .from('.core-text', {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out'
+        }, '-=0.3')
+        .from('.core-text-bold', {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out'
+        }, '-=0.4')
+        .from('.hexagon-item', {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.2,
+          ease: 'power2.out'
+        }, '-=0.3')
+        .from('.core-start-btn', {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out'
+        }, '-=0.2');
+      },
+      onEnterBack: () => {
+        if (tl) tl.kill();
+        tl = gsap.timeline();
+        tl.from('.core-title', {
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out'
+        })
+        .from('.core-subtitle', {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out'
+        }, '-=0.4')
+        .from('.core-text', {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out'
+        }, '-=0.3')
+        .from('.core-text-bold', {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out'
+        }, '-=0.4')
+        .from('.hexagon-item', {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.2,
+          ease: 'power2.out'
+        }, '-=0.3')
+        .from('.core-start-btn', {
+          y: 20,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power2.out'
+        }, '-=0.2');
+      },
+      once: false
     });
-
-    // 1) Títulos
-    tl.from('.core-title', {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power2.out'
-    })
-    .from('.core-subtitle', {
-      y: 30,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power2.out'
-    }, '-=0.4')
-    // 2) Texto descriptivo
-    .from('.core-text', {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power2.out'
-    }, '-=0.3')
-    .from('.core-text-bold', {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power2.out'
-    }, '-=0.4')
-    // 3) Hexágonos
-    .from('.hexagon-item', {
-      y: 30,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.2,
-      ease: 'power2.out'
-    }, '-=0.3')
-    // 4) Botón
-    .from('.core-start-btn', {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power2.out'
-    }, '-=0.2');
   });
 </script>

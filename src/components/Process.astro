@@ -24,11 +24,11 @@ import '../styles/global.css';
       <source src="./Video_fondo.mp4" type="video/mp4">
       <source src="/Video_fondo.mp4" type="video/mp4">
       <source src="Video_fondo.mp4" type="video/mp4">
-      <!-- Fallback para navegadores que no soportan video -->
+      
       <img src="/10_fondo.png" alt="Background" style="width: 100%; height: 100%; object-fit: cover;">
     </video>
     
-    <!-- Fallback manual -->
+    
     <div 
       id="fallback-bg"
       class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
@@ -39,128 +39,107 @@ import '../styles/global.css';
   <!-- Contenido principal -->
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-12 lg:py-16">
     
-    <!-- Título principal -->
+    
     <div class="text-center mb-8 sm:mb-12 lg:mb-16">
-<p class="process-title-0 process-subtitle text-white mb-3 tracking-wide" style="font-size: 35.2px; font-family: 'Antonio Light', 'Antonio', sans-serif; font-weight: 300; margin-bottom: -0.1em;">
+<p class="process-title-0 process-subtitle text-white mb-3 tracking-wide" style="font-size: 48px; font-family: 'Antonio Light', 'Antonio', sans-serif; font-weight: 300; margin-bottom: -0.1em;">
         FROM CONCEPT TO COMPLETION:
       </p>
       <h1 class="process-main-title text-white font-light" style="font-family: 'Antonio', sans-serif; line-height: 1;">
-        <span class="process-title-1 block" style="font-size: 48px; margin-bottom: 0.1em; margin-top: 0.05em; font-weight: 300;">THE SAFEGUARD</span>
-        <span class="process-title-2 block" style="font-size: 80px; margin-top: 0.09em; ">PROCESS</span>
+        <span class="process-title-1 block" style="font-size: 72px; margin-bottom: 0.1em; margin-top: 0.05em; font-weight: 300;">THE SAFEGUARD</span>
+        <span class="process-title-2 block" style="font-size: 120px; margin-top: 0.09em; ">PROCESS</span>
       </h1>
-<p class="process-description text-white mt-4 max-w-4xl mx-auto font-montserrat font-normal" style="font-size: 20px; line-height: 1;">
+<p class="process-description text-white mt-10 max-w-4xl mx-auto font-montserrat font-normal" style="font-size: 20px; line-height: 1;">
         <b>Our process is engineered to reduce friction and accelerate results</b><br class="hidden sm:block">
         Whether you're launching a new product or scaling an existing one,<br class="hidden sm:block">
         we guide you through every step with precision and transparency
       </p>
     </div>
 
-    <!-- Layout de 2 columnas: 3 títulos izquierda, 2 títulos derecha -->
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+    <!-- Layout de 2 columnas y 3 filas, con alineación y líneas según lo solicitado -->
+    <div class="max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 w-full items-start">
       
-      <!-- Columna izquierda: 3 títulos -->
-      <div class="space-y-6">
-        
-        <!-- Título 1: Discovery Consultation -->
-        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="discovery">
-          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
-            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
-              DISCOVERY CONSULTATION
-            </h3>
-            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
-              +
-            </div>
-          </div>
-          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
-            <div class="pt-4">
-              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                We listen, ask the right questions, and understand your vision and goals
-              </p>
-            </div>
+      <div class="process-section pb-6 w-full lg:col-span-1" data-section="discovery">
+        <div class="process-header flex items-center justify-end gap-4 cursor-pointer transition-all duration-300">
+          <h3 class="process-section-title text-white text-lg sm:text-xl md:text-[1.5rem] font-medium transition-all duration-500 whitespace-nowrap tracking-tight max-w-full flex justify-start" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.01em; font-size: 1.5rem;">
+            <span class="text-right w-full block pr-10 lg:pr-20 xl:pr-32 2xl:pr-40 text-[1.15rem] sm:text-[1.35rem] md:text-[1.6rem] lg:text-[1.85rem] xl:text-[2.05rem] 2xl:text-[2.2rem]">DISCOVERY CONSULTATION</span>
+          </h3>
+          <div class="process-toggle text-white text-4xl font-light transition-transform duration-300 flex items-center cursor-pointer">+</div>
+        </div>
+        <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+          <div class="pt-4">
+            <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+              We listen, ask the right questions, and understand your vision and goals
+            </p>
           </div>
         </div>
-
-        <!-- Título 2: Formulation & Testing -->
-        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="formulation">
-          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
-            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
-              FORMULATION & TESTING
-            </h3>
-            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
-              +
-            </div>
-          </div>
-          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
-            <div class="pt-4">
-              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                Our in-house chemists develop and validate your product in our lab
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Título 3: Blending & Filling -->
-        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="blending">
-          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
-            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
-              BLENDING & FILLING
-            </h3>
-            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
-              +
-            </div>
-          </div>
-          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
-            <div class="pt-4">
-              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                We handle batching, precision blending, and scalable filling: from 1mL to 1 gallon
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
-
-      <!-- Columna derecha: 2 títulos -->
-      <div class="space-y-6">
-        
-        <!-- Título 4: QA and R&D -->
-        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="qa-rd">
-          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
-            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
-              QA AND R&D
-            </h3>
-            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
-              +
-            </div>
-          </div>
-          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
-            <div class="pt-4">
-              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                Every run is tested for safety, performance, and full regulatory alignment
-              </p>
-            </div>
+      
+      <div class="process-section pb-6 w-full lg:col-span-1" data-section="qa-rd">
+        <div class="process-header flex items-center justify-end gap-4 cursor-pointer transition-all duration-300">
+          <h3 class="process-section-title text-white text-lg sm:text-xl md:text-[1.5rem] font-medium transition-all duration-500 whitespace-nowrap tracking-tight max-w-full flex justify-start" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.01em; font-size: 1.5rem;">
+            <span class="text-right w-full block pr-10 lg:pr-20 xl:pr-32 2xl:pr-40 text-[1.15rem] sm:text-[1.35rem] md:text-[1.6rem] lg:text-[1.85rem] xl:text-[2.05rem] 2xl:text-[2.2rem]">QA AND R&D</span>
+          </h3>
+          <div class="process-toggle text-white text-4xl font-light transition-transform duration-300 flex items-center cursor-pointer">+</div>
+        </div>
+        <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+          <div class="pt-4">
+            <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+              Every run is tested for safety, performance, and full regulatory alignment
+            </p>
           </div>
         </div>
-
-        <!-- Título 5: Packaging & Branding -->
-        <div class="process-section border-b border-white border-opacity-30 pb-4" data-section="packaging">
-          <div class="process-header flex items-center justify-between cursor-pointer transition-all duration-300">
-            <h3 class="process-section-title text-white text-lg sm:text-xl md:text-2xl font-medium transition-all duration-500" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.02em;">
-              PACKAGING & BRANDING
-            </h3>
-            <div class="process-toggle text-white text-2xl md:text-3xl font-light transition-transform duration-300">
-              +
-            </div>
-          </div>
-          <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
-            <div class="pt-4">
-              <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
-                We finalize your product with compliant, high-impact packaging and labeling
-              </p>
-            </div>
+      </div>
+      
+      <div class="w-full lg:col-span-2"><div class="border-b border-white border-opacity-30 w-full"></div></div>
+      
+      <div class="process-section pb-6 w-full lg:col-span-1" data-section="formulation">
+        <div class="process-header flex items-center justify-end gap-4 cursor-pointer transition-all duration-300">
+          <h3 class="process-section-title text-white text-lg sm:text-xl md:text-[1.5rem] font-medium transition-all duration-500 whitespace-nowrap tracking-tight max-w-full flex justify-start" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.01em; font-size: 1.5rem;">
+            <span class="text-right w-full block pr-10 lg:pr-20 xl:pr-32 2xl:pr-40 text-[1.15rem] sm:text-[1.35rem] md:text-[1.6rem] lg:text-[1.85rem] xl:text-[2.05rem] 2xl:text-[2.2rem]">FORMULATION & TESTING</span>
+          </h3>
+          <div class="process-toggle text-white text-4xl font-light transition-transform duration-300 flex items-center cursor-pointer">+</div>
+        </div>
+        <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+          <div class="pt-4">
+            <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+              Our in-house chemists develop and validate your product in our lab
+            </p>
           </div>
         </div>
-
+      </div>
+      
+      <div class="process-section pb-6 w-full lg:col-span-1" data-section="packaging">
+        <div class="process-header flex items-center justify-end gap-4 cursor-pointer transition-all duration-300">
+          <h3 class="process-section-title text-white text-lg sm:text-xl md:text-[1.5rem] font-medium transition-all duration-500 whitespace-nowrap tracking-tight max-w-full flex justify-start" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.01em; font-size: 1.5rem;">
+            <span class="text-right w-full block pr-10 lg:pr-20 xl:pr-32 2xl:pr-40 text-[1.15rem] sm:text-[1.35rem] md:text-[1.6rem] lg:text-[1.85rem] xl:text-[2.05rem] 2xl:text-[2.2rem]">PACKAGING & BRANDING</span>
+          </h3>
+          <div class="process-toggle text-white text-4xl font-light transition-transform duration-300 flex items-center cursor-pointer">+</div>
+        </div>
+        <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+          <div class="pt-4">
+            <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+              We finalize your product with compliant, high-impact packaging and labeling
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="w-full lg:col-span-2"><div class="border-b border-white border-opacity-30 w-full"></div></div>
+      
+      <div class="process-section pb-6 w-full lg:col-span-1" data-section="blending">
+        <div class="process-header flex items-center justify-end gap-4 cursor-pointer transition-all duration-300">
+          <h3 class="process-section-title text-white text-lg sm:text-xl md:text-[1.5rem] font-medium transition-all duration-500 whitespace-nowrap tracking-tight max-w-full flex justify-start" style="font-family: 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: 0.01em; font-size: 1.5rem;">
+            <span class="text-right w-full block pr-10 lg:pr-20 xl:pr-32 2xl:pr-40 text-[1.15rem] sm:text-[1.35rem] md:text-[1.6rem] lg:text-[1.85rem] xl:text-[2.05rem] 2xl:text-[2.2rem]">BLENDING & FILLING</span>
+          </h3>
+          <div class="process-toggle text-white text-4xl font-light transition-transform duration-300 flex items-center cursor-pointer">+</div>
+        </div>
+        <div class="process-content overflow-hidden transition-all duration-500 max-h-0">
+          <div class="pt-4">
+            <p class="text-white text-sm sm:text-base font-montserrat font-normal leading-relaxed opacity-90">
+              We handle batching, precision blending, and scalable filling: from 1mL to 1 gallon
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -219,19 +198,28 @@ import '../styles/global.css';
   }
  
   @media (max-width: 600px) {
-    .process-title-0 { font-size: 1rem !important; letter-spacing: 0.01em !important; }
-    .process-title-1 { font-size: 2.3rem !important; letter-spacing: -0.04em !important; }
-    .process-title-2 { font-size: 2.9rem !important; letter-spacing: 0.1em !important; }
+    .process-title-0 { font-size: 1.2rem !important; letter-spacing: 0.01em !important; }
+    .process-title-1 { font-size: 2.1rem !important; letter-spacing: -0.04em !important; }
+    .process-title-2 { font-size: 2.7rem !important; letter-spacing: 0.1em !important; }
+    .process-description { font-size: 1rem !important; }
+    .process-section-title { font-size: 1rem !important; }
+    .process-toggle { font-size: 2rem !important; }
   }
   @media (min-width: 601px) and (max-width: 1024px) {
-    .process-title-0 { font-size: 1.5rem !important; letter-spacing: -0.03em !important; }
-    .process-title-1 { font-size: 3rem !important; letter-spacing: -0.023em !important; }
-    .process-title-2 { font-size: 4rem !important; letter-spacing: 0.10em !important; }
+    .process-title-0 { font-size: 1.7rem !important; letter-spacing: -0.05em !important; }
+    .process-title-1 { font-size: 2.8rem !important; letter-spacing: -0.03em !important; }
+    .process-title-2 { font-size: 3.8rem !important; letter-spacing: 0.06em !important; }
+    .process-description { font-size: 1.1rem !important; }
+    .process-section-title { font-size: 1.2rem !important; }
+    .process-toggle { font-size: 2.5rem !important; }
   }
   @media (min-width: 1025px) {
-    .process-title-0 { font-size: 28px !important; letter-spacing: -0.04em !important; }
-    .process-title-1 { font-size: 48px !important; letter-spacing: 0.02em !important; }
-    .process-title-2 { font-size: 72px !important; letter-spacing: 0.1em !important; }
+    .process-title-0 { font-size: 44px !important; letter-spacing: -0.04em !important; }
+    .process-title-1 { font-size: 72px !important; letter-spacing: 0.04em !important; }
+    .process-title-2 { font-size: 122px !important; letter-spacing: 0.07em !important; }
+    .process-description { font-size: 20px !important; }
+    .process-section-title { font-size: 1.5rem !important; }
+    .process-toggle { font-size: 2.7rem !important; }
   }
 </style>
 
@@ -245,39 +233,35 @@ import '../styles/global.css';
     // Manejo agresivo del video
     const video = document.getElementById('background-video');
     const fallback = document.getElementById('fallback-bg');
-      
-    // Animaciones GSAP
-    const tl = gsap.timeline({
+
+    // Animaciones GSAP con ScrollTrigger para que se activen cada vez que la sección entra al viewport
+    gsap.timeline({
       scrollTrigger: {
-        trigger: '#safeguard-process',
+        trigger: '#process', // id correcto de la sección
         start: 'top 80%',
         end: 'bottom 20%',
-        toggleActions: 'play none play none',
+        toggleActions: 'play none none reset', // Reproduce al entrar, resetea al salir
+        markers: false // Puedes poner true para debug
       }
-    });
-
-    // Animación del subtítulo
-    tl.from('.process-subtitle', {
+    })
+    .from('.process-subtitle', {
       y: 30,
       opacity: 0,
       duration: 0.8,
       ease: 'power2.out'
     })
-    // Animación del título principal
     .from('.process-main-title', {
       y: 50,
       opacity: 0,
       duration: 1,
       ease: 'power2.out'
     }, '-=0.5')
-    // Animación de la descripción
     .from('.process-description', {
       y: 30,
       opacity: 0,
       duration: 0.8,
       ease: 'power2.out'
     }, '-=0.6')
-    // Animación de las secciones
     .from('.process-section', {
       y: 30,
       opacity: 0,
@@ -286,7 +270,7 @@ import '../styles/global.css';
       ease: 'power2.out'
     }, '-=0.4');
 
-    // Funcionalidad de toggle para las secciones
+    // Funcionalidad de toggle para las secciones (independiente)
     document.querySelectorAll('.process-section').forEach(section => {
       const header = section.querySelector('.process-header');
       const content = section.querySelector('.process-content');
@@ -295,7 +279,6 @@ import '../styles/global.css';
 
       header?.addEventListener('click', () => {
         const isActive = section.classList.contains('active');
-        
         if (isActive) {
           // Cerrar sección - cambiar de − a +
           section.classList.remove('active');
@@ -312,29 +295,6 @@ import '../styles/global.css';
             ease: 'power2.out'
           });
         } else {
-          // Cerrar otras secciones primero
-          document.querySelectorAll('.process-section.active').forEach(activeSection => {
-            if (activeSection !== section) {
-              activeSection.classList.remove('active');
-              const activeContent = activeSection.querySelector('.process-content');
-              const activeToggle = activeSection.querySelector('.process-toggle');
-              const activeTitle = activeSection.querySelector('.process-section-title');
-              
-              if (activeToggle) activeToggle.textContent = '+';
-              gsap.to(activeContent, {
-                maxHeight: 0,
-                duration: 0.5,
-                ease: 'power2.inOut'
-              });
-              gsap.to(activeTitle, {
-                scale: 1,
-                fontWeight: 500,
-                duration: 0.3,
-                ease: 'power2.out'
-              });
-            }
-          });
-
           // Abrir sección actual - cambiar de + a −
           section.classList.add('active');
           if (toggle) toggle.textContent = '−';

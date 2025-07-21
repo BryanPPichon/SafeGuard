@@ -2,26 +2,28 @@
 import bottleImage from '../assets/12_atomisador.png';
 ---
 
-<section id="project" class="banner-full-section w-full h-screen min-h-[600px] flex flex-col justify-center items-center bg-[#f6f6f6] relative overflow-x-hidden overflow-y-hidden">
-  <div class="absolute top-0 left-0 w-full h-2 bg-[#01ffff]"></div>
-  <div class="flex flex-col md:flex-row justify-center items-center w-full h-full max-w-[1400px] mx-auto px-4 z-10">
+<section id="project" class="banner-full-section w-full min-h-screen bg-[#f6f6f6] relative overflow-hidden grid place-items-center">
+  <div class="absolute top-0 left-0 w-full h-2 bg-[#01ffff] z-30"></div>
+  <div class="w-full h-full flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-0 px-0 lg:px-0 max-w-[1400px] mx-auto z-10">
     <!-- Imagen del frasco -->
-    <div class="flex justify-center items-center w-full md:w-1/2 mb-8 md:mb-0">
-      <img src={bottleImage.src} alt="Atomisador" class="max-h-[400px] md:max-h-[500px] w-auto object-contain drop-shadow-xl banner-bottle" />
+    <div class="flex items-center justify-center w-full lg:w-1/2 h-auto py-6 lg:py-0">
+      <img src={bottleImage.src} alt="Atomisador" class="banner-bottle max-h-[220px] sm:max-h-[320px] md:max-h-[400px] lg:max-h-[500px] w-auto object-contain drop-shadow-xl" />
     </div>
     <!-- Texto y botón -->
-    <div class="flex flex-col justify-center items-center md:items-start w-full md:w-1/2 text-center md:text-left gap-6">
-      <h2 class="font-[Antonio] text-[#464b68] text-[clamp(5rem,7vw,8.4rem)] font-normal leading-none banner-title">LET’S BUILD<br><span class="font-[Antonio] text-[#464b68]">SOMETHING</span></h2>
-      <h3 class="font-[Antonio] text-[#015c9f] text-[clamp(2.86rem,4.1vw,4.85rem)] font-extralight leading-none tracking-tight banner-subtitle">EXCEPTIONAL TOGETHER</h3>
-      <p class="font-[Montserrat] text-[#222] text-[clamp(1.1rem,2vw,2rem)] max-w-xl mt-2 banner-desc">
+    <div class="flex flex-col items-center lg:items-start justify-center w-full lg:w-1/2 text-center lg:text-left gap-4 px-2 lg:px-0">
+      <h2 class="font-[Antonio] text-[#464b68] text-[clamp(2.2rem,7vw,7.5rem)] font-normal leading-none banner-title">LET’S BUILD<br><span class="font-[Antonio] text-[#464b68]">SOMETHING</span></h2>
+      <h3 class="font-[Antonio] text-[#015c9f] text-[clamp(1.1rem,4vw,4rem)] font-extralight leading-none tracking-tight banner-subtitle">EXCEPTIONAL TOGETHER</h3>
+      <p class="font-[Montserrat] text-[#222] text-[clamp(0.9rem,2vw,1.7rem)] max-w-xs lg:max-w-xl mt-2 banner-desc">
         <span class="font-bold">Ready to bring your product </span> to life<br />
         <span>or scale your existing production?</span>
       </p>
-      <a href="#contact" class="inline-block mt-2 xl:mt-10 hero-btn-link">
-        <button class="bg-[#ffba00] hover:bg-[#daa300] text-black font-[Antonio] font-bold sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-4xl px-8 py-3 rounded-md shadow-lg transition-all duration-200 border-none outline-none hero-btn">
+      <a href="#contact" class="inline-block mt-2 xl:mt-10 hero-btn-link w-full lg:w-auto">
+        <button class="bg-[#ffba00] hover:bg-[#daa300] text-black font-[Antonio] font-bold text-sm md:text-lg lg:text-xl xl:text-2xl px-4 md:px-8 py-2 md:py-3 rounded-md shadow-lg transition-all duration-200 border-none outline-none hero-btn w-full lg:w-auto">
           START YOUR PROJECT TODAY
         </button>
       </a>
+    </div>
+  </div>
 </section>
 
 <script>
@@ -86,5 +88,31 @@ import bottleImage from '../assets/12_atomisador.png';
   .font-montserrat {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+  }
+  .banner-full-section {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .banner-bottle {
+    transition: max-height 0.3s cubic-bezier(.4,0,.2,1);
+  }
+  @media (max-width: 400px) {
+    .banner-title {
+      font-size: 1.7rem !important;
+    }
+    .banner-subtitle {
+      font-size: 0.9rem !important;
+    }
+    .banner-desc {
+      font-size: 0.75rem !important;
+    }
+    .banner-bottle {
+      max-height: 140px !important;
+    }
+    .hero-btn {
+      font-size: 0.8rem !important;
+      padding: 0.4rem 0.8rem !important;
+    }
   }
 </style>

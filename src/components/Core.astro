@@ -212,16 +212,21 @@ import '../styles/global.css';
   .hex-title {
     font-size: 1.7rem;
     font-weight: 400;
-    transition: font-size 0.3s;
+    transition: font-size 1.2s cubic-bezier(0.22, 1, 0.36, 1), color 1.2s cubic-bezier(0.22, 1, 0.36, 1);
     line-height: 1.1;
   }
   .group:hover .hex-title {
     font-size: 2.5rem;
+    color: #01ffff;
+  }
+  .hexagon-bg {
+    transition: background-image 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .group:hover .hexagon-bg {
     background-image: url('/src/assets/9_hexagonoGris.png');
     filter: none;
     box-shadow: none;
+    transform: scale(0.95);
   }
   .hexagon-overlay {
     display: none;

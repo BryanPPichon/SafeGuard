@@ -1,10 +1,9 @@
 ---
-import doctorImage from '../assets/doctor.png';
-import backgroundImage from '../assets/fondo.png';
+import backgroundImage from '../assets/ProductionTrack.png';
 import '../styles/global.css';
 ---
 
-<section id="manufacturing" class="relative flex items-center justify-center overflow-hidden pt-32 sm:pt-40 lg:pt-48 min-h-[100vh]">
+<section id="manufacturing" class="relative flex items-center justify-center overflow-hidden min-h-[100vh]">
   <!-- Imagen de fondo -->
   <div class="absolute inset-0 z-0">
     <img
@@ -12,41 +11,25 @@ import '../styles/global.css';
       alt="Scientific background"
       class="w-full h-full object-cover"
     />
+    <div class="absolute inset-0 bg-black opacity-50"></div>
   </div>
 
   <!-- Contenido principal -->
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-      
-      <!-- Imagen del doctor -->
-      <div class="flex justify-center lg:justify-start order-2 lg:order-1">
-        <div class="max-w-md lg:max-w-lg xl:max-w-xl w-full flex items-end h-full">
-          <img
-            src={doctorImage.src}
-            alt="Professional scientist with arms crossed"
-            class="w-full h-full object-contain"
-            style="display: block; margin-top: auto;"
-          />
-        </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-center">
+    <!-- Contenido de texto -->
+    <div id="section2-content" class="text-center lg:text-center space-y-6 lg:space-y-8 order-1 lg:order-2 mx-auto">
+      <div class="section2-title">
+        <h2 class="font-[Antonio] text-[#01ffff] leading-tight">
+          <span class="block text-[clamp(3rem,7.6vw,6rem)]">TURNKEY LIQUID</span>
+          <span class="block text-[clamp(2.7rem,7vw,5.6rem)]">MANUFACTURING</span>
+        </h2>
       </div>
-
-      <!-- Contenido de texto -->
-      <div class="text-center lg:text-left space-y-6 lg:space-y-8 order-1 lg:order-2">
-        <div class="section2-title">
-          <h2 class="font-[Antonio] text-[#01ffff] leading-tight">
-            <span class="block text-[clamp(3rem,7.6vw,6rem)]">TURNKEY LIQUID</span>
-            <span class="block text-[clamp(2.7rem,7vw,5.6rem)]">MANUFACTURING</span>
-          </h2>
-        </div>
-        
-        <div class="section2-content space-y-4 lg:space-y-6">
-          <p class="text-lg sm:text-xl lg:text-xl text-white leading-relaxed font-[Montserrat] font-light">
-            From custom formulation and testing to <br>
-            high-capacity blending, filling, and packaging, <br>
-            we deliver reliable solutions with precision, <br>
-            speed, and care
-          </p>
-        </div>
+      <div class="section2-content">
+        <p class="text-xs sm:text-md lg:text-xl text-white leading-relaxed font-[Montserrat] font-light">
+          From custom formulation and testing to high-capacity <br>
+          blending, filling, and packaging, we deliver reliable <br>
+          solutions with precision, speed, and care
+        </p>
       </div>
     </div>
   </div>
@@ -58,41 +41,31 @@ import '../styles/global.css';
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Animaciones de entrada para Section2 (se repiten al entrar desde arriba o abajo)
-  gsap.from('.section2-title h2 span', {
-    duration: 1.5,
-    y: 80,
+  // Animación de entrada y salida para el título
+  gsap.from('.section2-title',{
+    y: 50, 
     opacity: 0,
-    stagger: 0.25,
+    stagger: 0.2,
+    duration: 1,
+    delay: 0.5,
     ease: 'power2.out',
     scrollTrigger: {
       trigger: '.section2-title',
       start: 'top 85%',
-      end: 'bottom 20%',
-      toggleActions: 'restart none restart none' // Se repite al entrar desde arriba o abajo
-    }
-  });
-
-  gsap.from('.section2-content', {
-    duration: 1.2,
-    y: 50,
-    opacity: 0,
-    ease: 'power2.out',
-    scrollTrigger: {
-      trigger: '.section2-content',
-      start: 'top 90%',
       toggleActions: 'restart none restart none'
     }
   });
-
-  gsap.from('.max-w-md', {
-    duration: 1.5,
-    x: -80,
+  // Animación de entrada y salida para el contenido
+  gsap.from('.section2-content', {
+    y: 50,
     opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    delay: 0.9,
     ease: 'power2.out',
     scrollTrigger: {
-      trigger: '.max-w-md',
-      start: 'top 95%',
+      trigger: '.section2-content',
+      start: 'top 85%',
       toggleActions: 'restart none restart none'
     }
   });

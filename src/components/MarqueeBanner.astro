@@ -1,7 +1,5 @@
 ---
 ---
-
-
 <div class="marquee-banner">
   <div class="marquee-track">
     <span class="marquee-text font-antonioLight">OUR FULLY CERTIFIED FACILITY IS BUILT FOR PERFORMANCE, SCALE, AND SPEED</span>
@@ -16,41 +14,59 @@
     font-family: 'Antonio Light', 'Antonio', sans-serif;
     font-weight: 300;
   }
+
   .marquee-banner {
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
     background: #01ffff;
-    height: 136px;
     display: flex;
     align-items: center;
     position: relative;
     z-index: 30;
+    height: 100px; /* base */
   }
+
   .marquee-track {
     display: flex;
     width: max-content;
     animation: marquee 32s linear infinite;
   }
+
   .marquee-text {
-    font-size: 80px;
+    font-size: 3rem; /* base */
     color: #015c9f;
     text-transform: uppercase;
     white-space: nowrap;
-    margin-right: 8vw;
+    margin-right: 6vw;
     letter-spacing: 0.02em;
   }
-  @media (max-width: 600px) {
-    .marquee-text { font-size: 4.4rem !important; }
-    .marquee-banner { height: 80px; }
+
+  /* Ajustes por pantalla */
+  @media (max-width: 480px) {
+    .marquee-text { font-size: 1.8rem; }
+    .marquee-banner { height: 60px; }
   }
-  @media (min-width: 601px) and (max-width: 1024px) {
-    .marquee-text { font-size: 7rem !important; }
-    .marquee-banner { height: 128px; }
+
+  @media (min-width: 481px) and (max-width: 639px) {
+    .marquee-text { font-size: 2.2rem; }
+    .marquee-banner { height: 70px; }
   }
+
+  @media (min-width: 640px) and (max-width: 820px) {
+    .marquee-text { font-size: 2.8rem; }
+    .marquee-banner { height: 85px; }
+  }
+
+  @media (min-width: 821px) and (max-width: 1024px) {
+    .marquee-text { font-size: 3.8rem; }
+    .marquee-banner { height: 100px; }
+  }
+
   @media (min-width: 1025px) {
-    .marquee-text { font-size: 80px !important; }
-    .marquee-banner { height: 136px; }
+    .marquee-text { font-size: 5rem; }
+    .marquee-banner { height: 120px; }
   }
+
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }

@@ -1,151 +1,283 @@
-
 ---
 import MarqueeBanner from '../components/MarqueeBanner.astro';
 ---
 
-<section id="facility" class="scroll-mt-60 certified-facility-section relative w-full h-[90vh] overflow-hidden bg-cover bg-center" style="background-image: url('/fondo6.png');">
-  <div class="absolute top-0 left-0 w-full z-20">
-    <MarqueeBanner />
-  </div>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
 
-  <div class="relative flex flex-col md:flex-row items-center justify-center h-full z-10 max-w-6xl mx-auto gap-4 md:gap-8" style="padding-top: 20px;">
-    <div class="flex flex-col justify-center items-center text-center md:text-left md:items-start md:justify-center md:max-w-[800px] md:pl-8 lg:pl-16 xl:pl-24">
-      <div class="max-w-7xl flex flex-col items-center gap-0">
-        <div class="title-line1 font-antonioLight text-[#01ffff] cf-title1 text-[clamp(2.86rem,4.1vw,4.85rem)] animated-title mb-0" style="line-height:1; margin-bottom:0;">STATE-OF-THE-ART</div>
-        <div class="title-line2 font-antonioLight text-[#01ffff] cf-title2 text-[clamp(2.86rem,4.1vw,4.85rem)] animated-title mt-[-0.9em] mb-2 md:mb-3" style="line-height:1; margin-top:-0.3em;">MANUFACTURING</div>
-        <div class="title-line3 font-antonioLight text-[#01ffff] leading-none cf-title3 text-[clamp(5rem,7vw,8.4rem)] lg:-ml-4 animated-title mb-4 md:mb-6">IN DALLAS, TX</div>
+<section class="relative w-full bg-cover bg-center bg-no-repeat overflow-hidden" style="background-image: url('/fondo6.png');">
+  <div class="swiper mySwiper w-full h-full">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="scroll-mt-60 certified-facility-section flex flex-col-reverse lg:flex-row w-full min-h-[60vh] py-10 px-4 items-center justify-center">
+
+          <div class="w-full lg:w-[45%] flex items-center justify-center lg:justify-end lg:pr-8 mt-6 lg:mt-0">
+            <div class="text-center lg:text-left">
+              <h1 class="font-[Antonio] text-[#01ffff] mb-4" style="line-height:1.3em; letter-spacing:0.01em;">
+                <span class="animate-slide block text-[2rem] sm:text-[2.7rem] md:text-[3.2rem] lg:text-[3.5rem] mb-1" style="line-height:1.1em; letter-spacing:-0.003em;">STATE-OF-THE-ART</span>
+                <span class="animate-slide block text-[2rem] sm:text-[2.7rem] md:text-[3.2rem] lg:text-[3.5rem] mb-1" style="line-height:1.1em; letter-spacing:0.02em;">MANUFACTURING</span>
+                <span class=" animate-slide  block text-[2.5rem] sm:text-[3.2rem] md:text-[4.5rem] lg:text-[5.2rem] mt-1" style="line-height:1.1em; letter-spacing:-0.035em;">IN DALLAS, TX</span>
+              </h1>
+<p class="animate-fade-right font-montserrat font-bold text-white text-base sm:text-lg leading-tight mb-5" style="letter-spacing:0.01em;">
+                Our fully certified facility is built for<br />performance, scale, and speed
+              </p>
+              <p class="animate-slide-x font-montserrat text-white text-sm sm:text-base opacity-80 max-w-md mx-auto lg:mx-0 leading-snug" style="letter-spacing:0.01em;">
+                Strategically located in Dallas, we’re<br />positioned to serve regional and national<br />brands with unmatched efficiency
+              </p>
+            </div>
+          </div>
+
+
+<div class="w-full lg:w-[55%] flex items-center justify-start">
+<img
+    src="/mapa6.png"
+    alt="Mapa de distribución desde Dallas"
+    class="animate-wow w-full max-w-[1150px] max-h-[640px] sm:max-h-[680px] md:max-h-[720px] lg:max-h-[98%] object-contain drop-shadow-xl mt-16 lg:-ml-28 xl:-ml-36 2xl:-ml-44"
+  />
+</div>
+
+
+
+        </div>
       </div>
-      <p class="description font-montserrat font-extralight text-white text-[20px] lg:-ml-4 max-w-2xl w-full text-center md:text-center md:mx-0 mt-8 md:mt-10 leading-tight md:leading-snug cf-desc">
-        <span class="block w-full text-center lg:-ml-19 md:text-left md:pl-8 lg:pl-16 xl:pl-24">Our fully certified facility is built for</span>
-        <span class="block w-full text-center lg:-ml-19 md:text-left md:pl-8 lg:pl-16 xl:pl-24 tracking-normal" style="letter-spacing: -0.04em;">performance, scale, and speed</span>
+
+ 
+      <div class="swiper-slide">
+        <div class="scroll-mt-60 certified-facility-section flex flex-col lg:flex-row w-full min-h-[60vh] py-10 px-4 items-center justify-center">
+
+        <div class="w-full lg:w-[55%] flex items-center justify-center lg:justify-end lg:pr-10">
+  <h2 class="text-[#01ffff] font-[Antonio] leading-tight text-center lg:text-left">
+    <span class="animate-slide block text-[3.9rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] tracking-[0.038em]">
+      17,000-GALLON
+    </span>
+    <span class="animate-slide block text-[3.9rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] tracking-[-0.02em]">
+      MIXING CAPACITY
+    </span>
+  </h2>
+</div>
+
+<div class="w-full lg:w-[45%] flex items-center justify-center lg:justify-start lg:pl-10 mt-6 lg:mt-0">
+<p class="animate-fade-right font-montserrat text-white text-[1.8rem] font-medium opacity-90 max-w-md text-center lg:text-left leading-snug">
+    Designed for high-volume <br /> batching and fast throughput
+  </p>
+</div>
+
+        </div>
+      </div>
+
+
+<div class="swiper-slide">
+  <div class="scroll-mt-60 certified-facility-section flex flex-col lg:flex-row w-full min-h-[60vh] py-10 px-4 items-center justify-center">
+    
+  
+    <div class="w-full lg:w-[55%] flex items-center justify-center lg:justify-end lg:pr-10">
+      <h2 class="text-[#01ffff] font-[Antonio] leading-tight text-center lg:text-left">
+        <span class="animate-slide block text-[3.9rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] tracking-[0.05em]">
+          12 HIGH-SPEED
+        </span>
+        <span class="animate-slide block text-[3.9rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] tracking-[-0.04em]">
+          PRODUCTION LINES
+        </span>
+      </h2>
+    </div>
+
+    <div class="w-full lg:w-[45%] flex items-center justify-center lg:justify-start lg:pl-10 mt-6 lg:mt-0">
+<p class="animate-fade-right font-montserrat text-white text-[1.8rem] font-medium opacity-90 max-w-md text-center lg:text-left leading-snug">
+        Configurable for liquid fills <br /> from  1mL to 1 gallon
       </p>
     </div>
-    <div class="w-full flex items-center justify-center mb-6 md:mb-0 hero-right">
-      <img 
-        src="/mapa6.png" 
-        alt="Mapa" 
-        class="cf-map drop-shadow-xl w-[200px] sm:w-[300px] lg:w-[480px] transition-transform duration-300" 
-        style="z-index:2;" 
-      />
+
+  </div>
+</div>
+
+<div class="swiper-slide">
+  <div class="scroll-mt-60 certified-facility-section flex flex-col lg:flex-row w-full min-h-[60vh] py-10 px-4 items-center justify-center">
+
+
+    <div class="w-full lg:w-[55%] flex items-center justify-center lg:justify-end lg:pr-10">
+<h2 class="text-[#01ffff] font-[Antonio] leading-tight text-center lg:text-left">
+  <span class="animate-slide block text-[4.8rem] sm:text-[5rem] md:text-[5.2rem] lg:text-[5.5rem] tracking-[0.02em]">
+    FDA, MOCRA
+  </span>
+  <span class="animate-slide lock text-[3.9rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] tracking-[0em]">
+    & EPA CERTIFIED
+  </span>
+</h2>
+
     </div>
+
+    <div class="w-full lg:w-[45%] flex items-center justify-center lg:justify-start lg:pl-10 mt-6 lg:mt-0">
+<p class="animate-fade-right font-montserrat text-white text-[1.8rem] font-medium opacity-90 max-w-md text-center lg:text-left leading-snug">
+        Full regulatory compliance <br /> across categories
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="swiper-slide">
+  <div class="scroll-mt-60 certified-facility-section flex flex-col lg:flex-row w-full min-h-[60vh] py-10 px-4 items-center justify-center">
+
+    <div class="w-full lg:w-[55%] flex items-center justify-center lg:justify-end lg:pr-10">
+<h2 class="text-[#01ffff] font-[Antonio] leading-tight text-center lg:text-left">
+<span class="animate-slide block text-[3.5rem] sm:text-[3.7rem] md:text-[3.9rem] lg:text-[4rem] tracking-[0.0em]">
+  PRECISION LABELING
+</span>
+
+  <span class="animate-slide block text-[5.5rem] sm:text-[6rem] md:text-[6.5rem] lg:text-[7.5rem] tracking-[-0.01em]">
+    & SLEEVING
+  </span>
+</h2>
+
+    </div>
+
+
+    <div class="w-full lg:w-[45%] flex items-center justify-center lg:justify-start lg:pl-10 mt-6 lg:mt-0">
+<p class="animate-fade-right font-montserrat text-white text-[1.8rem] font-medium opacity-90 max-w-md text-center lg:text-left leading-snug">
+        Broad-range packaging <br /> solutions ready for market
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="swiper-slide">
+  <div class="scroll-mt-60 certified-facility-section flex flex-col lg:flex-row w-full min-h-[60vh] py-10 px-4 items-center justify-center">
+<div class="w-full lg:w-[55%] flex items-center justify-center lg:justify-end lg:pr-10">
+  <h2 class="text-[#01ffff] font-[Antonio] leading-[1.1] text-center lg:text-left">
+    <span class="animate-slide block text-[6rem] sm:text-[7rem] md:text-[8rem] lg:text-[9rem] tracking-[0.02em]">
+      MADE
+    </span>
+    <span class="animate-slide block text-[3.9rem] sm:text-[4.3rem] md:text-[4.6rem] lg:text-[5rem] tracking-[0.010em]">
+      IN THE USA
+    </span>
+  </h2>
+</div>
+
+    <div class="w-full lg:w-[45%] flex items-center justify-center lg:justify-start lg:pl-10 mt-6 lg:mt-6">
+  <p class="animate-fade-right font-montserrat text-white text-[1.8rem] font-medium opacity-90 max-w-md text-center lg:text-left leading-snug">
+        Operational integrity,<br />reliable labor force,and <br /> trusted supply chain
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+
+    </div>
+    <div class="swiper-pagination mt-4"></div>
   </div>
 
-  <div class="absolute bottom-0 left-0 w-full z-20">
-    <MarqueeBanner />
-  </div>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script type="module" defer>
+    window.addEventListener('DOMContentLoaded', () => {
+      import Swiper, { Pagination, Navigation } from 'swiper';
+      Swiper.use([Pagination, Navigation]);
+      const swiperInstance = new Swiper('.mySwiper', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        observer: true,
+        observeParents: true,
+      });
+    });
+  </script>
 </section>
+<!-- GSAP desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 
-<style>
-  .font-antonioLight {
-    font-family: 'Antonio Light', 'Antonio', sans-serif;
-    font-weight: 300;
-  }
-  .font-montserrat {
-    font-family: 'Montserrat', sans-serif;
-  }
-  .marquee-text {
-    will-change: transform;
-    display: inline-block;
-    padding-left: 100vw;
-    /* Espaciado para loop */
-  }
-  /* Media queries utilidades */
-  @layer utilities {
-    .title-line1 {
-      letter-spacing: 0.0em;
-    }
-    .title-line2 {
-      letter-spacing: 0.00em;
-    }
-    .title-line3 {
-      letter-spacing: 0.01em;
-    }
-    @media (max-width: 600px) {
-      .title-line1 { font-size: 2.5rem !important; letter-spacing: 0.01em !important; }
-      .title-line2 { font-size: 2.5rem !important; letter-spacing: 0.035em !important; }
-      .title-line3 { font-size: 3.5rem !important; letter-spacing: 0.0em !important; }
-      .marquee-text { font-size: 2.2rem !important; }
-      .description { font-size: 1rem !important; line-height: 1.1 !important; margin-top: 1.5rem !important; letter-spacing: -0.07em !important;}
-      
-    }
-    @media (min-width: 601px) and (max-width: 1024px) {
-      .title-line1 { font-size: 3.5rem !important; letter-spacing: -0.01em !important; }
-      .title-line2 { font-size: 3.5rem !important; letter-spacing: 0.01em !important; }
-      .title-line3 { font-size: 5.8rem !important; letter-spacing: -0.065em !important; }
-      .marquee-text { font-size: 3.5rem !important; }
-      .description { font-size: 1rem !important; line-height: 1.15 !important; margin-top: 1.5rem !important;letter-spacing: 0.0em !important; }
-    }
-    @media (min-width: 1025px) {
-      .title-line1 { letter-spacing: 0.0em !important; }
-      .title-line2 {  letter-spacing: 0.03em !important; }
-      .title-line3 {  letter-spacing: -0.069em !important; }
-      
-       }
-  }
-  .animated-title {
-    transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
-    will-change: transform;
-    cursor: default;
-  }
-  .animated-title:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 32px 0 rgba(1,255,255,0.18);
-  }
-</style>
-
-<script>
-  import { gsap } from 'gsap';
+<script defer>
   window.addEventListener('DOMContentLoaded', () => {
-    // Animación banners
-    const banners = [
-      document.querySelector('#banner-top .marquee-text'),
-      document.querySelector('#banner-bottom .marquee-text')
-    ];
-    banners.forEach(banner => {
-      if (banner && banner instanceof HTMLElement) {
-        const textWidth = banner.offsetWidth;
-        gsap.to(banner, {
-          x: () => `-${textWidth}px`,
-          duration: 18,
-          ease: 'linear',
-          repeat: -1,
-          modifiers: {
-            x: gsap.utils.unitize(x => parseFloat(x) % (textWidth + window.innerWidth))
-          }
-        });
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      on: {
+        init: () => {
+          animateCurrentSlide();
+        },
+        slideChangeTransitionStart: () => {
+          hideAllAnimatedElements();
+        },
+        slideChangeTransitionEnd: () => {
+          animateCurrentSlide();
+        },
       }
     });
 
-    // Animación de entrada texto
-    const animateText = () => {
-      const tl = gsap.timeline();
-      tl.from('.cf-title1', { y: 60, opacity: 0, duration: 0.6, ease: 'power3.out' });
-      tl.from('.cf-title2', { y: 40, opacity: 0, duration: 0.5, ease: 'power3.out' }, '-=0.4');
-      tl.from('.cf-title3', { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3');
-      tl.from('.cf-desc', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, '-=0.3');
-    };
-    // Intersection Observer para animar al entrar en viewport
-    const section = document.querySelector('.certified-facility-section');
-    if (section) {
-      const observer = new window.IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            animateText();
-          }
-        });
-      }, { threshold: 0.4 });
-      observer.observe(section);
+    function hideAllAnimatedElements() {
+      const animatedEls = document.querySelectorAll('.animate-slide');
+      animatedEls.forEach(el => {
+        gsap.set(el, { opacity: 0, y: 50 });
+      });
+      const animatedElsX = document.querySelectorAll('.animate-slide-x');
+      animatedElsX.forEach(el => {
+        gsap.set(el, { opacity: 0, x: -50 });
+      });
+      const wowEls = document.querySelectorAll('.animate-wow');
+      wowEls.forEach(el => {
+        gsap.set(el, { opacity: 0, scale: 0.7, rotate: -15 });
+      });
+      const fadeRightEls = document.querySelectorAll('.animate-fade-right');
+      fadeRightEls.forEach(el => {
+        gsap.set(el, { opacity: 0, x: 40 });
+      });
     }
 
-    // Animación hover mapa
-    const map = document.querySelector('.cf-map');
-    if (map) {
-      map.addEventListener('mouseenter', () => {
-        gsap.to(map, { scale: 1.15, duration: 0.4, ease: 'power2.out' });
+    function animateCurrentSlide() {
+      const activeSlide = document.querySelector('.swiper-slide-active');
+      if (!activeSlide) return;
+      const animEls = activeSlide.querySelectorAll('.animate-slide');
+      const animElsX = activeSlide.querySelectorAll('.animate-slide-x');
+      const wowEls = activeSlide.querySelectorAll('.animate-wow');
+      const fadeRightEls = activeSlide.querySelectorAll('.animate-fade-right');
+
+      gsap.to(animEls, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out'
       });
-      map.addEventListener('mouseleave', () => {
-        gsap.to(map, { scale: 1, duration: 0.4, ease: 'power2.out' });
+      gsap.to(animElsX, {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out'
+      });
+      wowEls.forEach(el => {
+        // Reinicia el estado antes de animar cada vez
+        gsap.set(el, { opacity: 0, scale: 0.7, rotate: -15 });
+        gsap.to(el, {
+          opacity: 1,
+          scale: 1,
+          rotate: 0,
+          duration: 2.1,
+          ease: 'power2.out'
+        });
+      });
+      fadeRightEls.forEach(el => {
+        gsap.set(el, { opacity: 0, x: 40 });
+        gsap.to(el, {
+          opacity: 1,
+          x: 0,
+          duration: 1.3,
+          ease: 'power2.out'
+        });
       });
     }
+
+    hideAllAnimatedElements();
   });
 </script>

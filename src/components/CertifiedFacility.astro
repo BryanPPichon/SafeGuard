@@ -160,7 +160,7 @@ import MarqueeBanner from '../components/MarqueeBanner.astro';
 
     <div class="w-full lg:w-[45%] flex items-center justify-center lg:justify-start lg:pl-10 mt-6 lg:mt-6">
   <p class="animate-fade-right font-montserrat text-white text-[1.8rem] font-medium opacity-90 max-w-md text-center lg:text-left leading-snug">
-        Operational integrity,<br />reliable labor force,and <br /> trusted supply chain
+        Operational integrity,<br />reliable labor force, and <br /> trusted supply chain
       </p>
     </div>
 
@@ -279,5 +279,24 @@ import MarqueeBanner from '../components/MarqueeBanner.astro';
     }
 
     hideAllAnimatedElements();
+
+    const carouselSection = document.querySelector('.mySwiper');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCurrentSlide(); // ✅ Se activa cada vez que la sección es visible
+      } else {
+        hideAllAnimatedElements(); // Opcional: para resetear si sales de la sección
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+
+observer.observe(carouselSection);
+
   });
 </script>
